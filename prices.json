@@ -4,36 +4,32 @@
             "name": "Giant Catfish",
             "npc": 35000,
             "bazaar": 398000
-        }, "seed_of_power": {
-      "name": "Seed of Power",
-      "npc": 0,
-      "bazaar": 0
-    },
-
-    "new_moon_crystal": {
-      "name": "New Moon Crystal",
-      "npc": 0,
-      "bazaar": 1666
-    },
-
-    "half_moon_crystal": {
-      "name": "Half Moon Crystal",
-      "npc": 0,
-      "bazaar": 36499
-    },
-
-    "group_time_space_piece": {
-      "name": "Group Time-space Piece",
-      "npc": 0,
-      "bazaar": 35000
-    },
-
-    "gillion_stone": {
-      "name": "Gillion Stone",
-      "npc": 0,
-      "bazaar": 8487
-    },
-
+        },
+        "seed_of_power": {
+            "name": "Seed of Power",
+            "npc": 0,
+            "bazaar": 90
+        },
+        "new_moon_crystal": {
+            "name": "New Moon Crystal",
+            "npc": 0,
+            "bazaar": 1666
+        },
+        "half_moon_crystal": {
+            "name": "Half Moon Crystal",
+            "npc": 0,
+            "bazaar": 36499
+        },
+        "group_time_space_piece": {
+            "name": "Group Time-space Piece",
+            "npc": 0,
+            "bazaar": 35000
+        },
+        "gillion_stone": {
+            "name": "Gillion Stone",
+            "npc": 0,
+            "bazaar": 8487
+        },
         "silver_piranha": {
             "name": "Silver Piranha",
             "npc": 750,
@@ -52,12 +48,12 @@
         "catfish": {
             "name": "Catfish",
             "npc": 2650,
-            "bazaar": 15000
+            "bazaar": 6296
         },
         "chocolate_shark": {
             "name": "Chocolate Shark",
             "npc": 55000,
-            "bazaar": 90000
+            "bazaar": 88888
         },
         "red_starfish": {
             "name": "Red Starfish",
@@ -77,7 +73,7 @@
         "red_pollock": {
             "name": "Red Pollock",
             "npc": 3400,
-            "bazaar": 344443
+            "bazaar": 324999
         },
         "arowana": {
             "name": "Arowana",
@@ -97,7 +93,7 @@
         "salmon": {
             "name": "Salmon",
             "npc": 4500,
-            "bazaar": 70000
+            "bazaar": 69999
         },
         "megalodon": {
             "name": "Megalodon",
@@ -122,12 +118,12 @@
         "deep_sea_pollock": {
             "name": "Deep-Sea Pollock",
             "npc": 5000,
-            "bazaar": 44444
+            "bazaar": 39999
         },
         "frigus": {
             "name": "Frigus",
             "npc": 80000,
-            "bazaar": 249999
+            "bazaar": 1111111
         },
         "blue_coelacanth": {
             "name": "Blue Coelacanth",
@@ -147,7 +143,7 @@
         "rugged_sea_turtle": {
             "name": "Rugged Sea Turtle",
             "npc": 5300,
-            "bazaar": 28000
+            "bazaar": 26999
         },
         "violet_sea_turtle": {
             "name": "Violet Sea Turtle",
@@ -157,7 +153,7 @@
         "river_tyrant": {
             "name": "River Tyrant",
             "npc": 170000,
-            "bazaar": 334997
+            "bazaar": 334995
         },
         "really_chubby_carp": {
             "name": "Really Chubby Carp",
@@ -182,7 +178,7 @@
         "river_goby": {
             "name": "River Goby",
             "npc": 6000,
-            "bazaar": 11000
+            "bazaar": 9999
         },
         "octopus": {
             "name": "Octopus",
@@ -197,7 +193,7 @@
         "porky_pollock": {
             "name": "Porky Pollock",
             "npc": 900,
-            "bazaar": 4600
+            "bazaar": 4444
         },
         "molly": {
             "name": "Molly",
@@ -212,12 +208,12 @@
         "tuna": {
             "name": "Tuna",
             "npc": 5800,
-            "bazaar": 13100
+            "bazaar": 12999
         },
         "tropical_pollock": {
             "name": "Tropical Pollock",
             "npc": 5500,
-            "bazaar": 79999
+            "bazaar": 77777
         },
         "black_speckled_sturgeon": {
             "name": "Black Speckled Sturgeon",
@@ -232,12 +228,12 @@
         "blue_piranha": {
             "name": "Blue Piranha",
             "npc": 900,
-            "bazaar": 20800
+            "bazaar": 22998
         },
         "green_piranha": {
             "name": "Green Piranha",
             "npc": 900,
-            "bazaar": 20498
+            "bazaar": 22996
         },
         "red_snakehead": {
             "name": "Red Snakehead",
@@ -247,7 +243,7 @@
         "suckermouth_catfish": {
             "name": "Suckermouth Catfish",
             "npc": 5000,
-            "bazaar": 5300
+            "bazaar": 6296
         },
         "stick_fish": {
             "name": "Stick Fish",
@@ -257,17 +253,17 @@
         "sockeye_salmon": {
             "name": "Sockeye Salmon",
             "npc": 6500,
-            "bazaar": 86998
+            "bazaar": 79999
         },
         "goby_minnow": {
             "name": "Goby Minnow",
             "npc": 6500,
-            "bazaar": 6500
+            "bazaar": 11800
         },
         "eel": {
             "name": "Eel",
             "npc": 6500,
-            "bazaar": 73800
+            "bazaar": 69999
         },
         "black_alligator": {
             "name": "Black Alligator",
