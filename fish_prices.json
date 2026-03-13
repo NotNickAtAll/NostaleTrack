@@ -61,9 +61,9 @@
     }
 
     {
-  "zone": "1-50",
-  "average_gold": 11300,
-  "fish": [
+      "zone": "1-50",
+      "average_gold": 11300,
+      "fish": [
     {
       "name": "Giant Catfish",
       "chance": "1.2%",
