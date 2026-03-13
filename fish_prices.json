@@ -18,27 +18,6 @@
           "npc_value":20000,
           "bazaar_value":31000,
           "icon":"FishPng/silver_piranha.png"
-        },
-        {
-          "name":"Bespectacled Carp",
-          "chance":"20%",
-          "npc_value":12000,
-          "bazaar_value":16500,
-          "icon":"FishPng/bespectacled_carp.png"
-        },
-        {
-          "name":"Chubby Carp",
-          "chance":"20%",
-          "npc_value":9000,
-          "bazaar_value":13000,
-          "icon":"FishPng/chubby_carp.png"
-        },
-        {
-          "name":"Catfish",
-          "chance":"10%",
-          "npc_value":8000,
-          "bazaar_value":11500,
-          "icon":"FishPng/catfish.png"
         }
       ]
     }
