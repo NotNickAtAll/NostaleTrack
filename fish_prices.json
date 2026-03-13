@@ -1,0 +1,10 @@
+{
+  "fish": [
+    {"name": "Silver Piranha", "price": 20000},
+    {"name": "Red Pollock", "price": 106000},
+    {"name": "Salmon", "price": 48000},
+    {"name": "Golden Carp", "price": 75000},
+    {"name": "Moon Tuna", "price": 135000}
+  ],
+  "updated": "testing"
+}
