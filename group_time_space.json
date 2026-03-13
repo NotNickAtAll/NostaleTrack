@@ -2,14 +2,14 @@
   "runs": [
     {
       "range": "35-99",
-      "time_minutes": 3,
+      "time_minutes": 5,
       "cost": 44996,
       "solo_profit": 169740,
       "solo_net_profit": 124744,
-      "solo_gold_hour": 2494880,
+      "solo_gold_hour": 1496928,
       "trio_profit": 509220,
       "trio_net_profit": 464224,
-      "trio_gold_hour": 9284480
+      "trio_gold_hour": 5570688
     },
     {
       "range": "45-99",
@@ -24,15 +24,15 @@
     },
     {
       "range": "50-99",
-      "time_minutes": 5,
+      "time_minutes": 6,
       "cost": 217495,
       "solo_profit": 254610,
       "solo_net_profit": 37115,
-      "solo_gold_hour": 445380,
+      "solo_gold_hour": 371150,
       "trio_profit": 763830,
       "trio_net_profit": 546335,
-      "trio_gold_hour": 6556020
+      "trio_gold_hour": 5463350
     }
   ],
-  "updated": 1773419140
+  "updated": 1773420563
 }
