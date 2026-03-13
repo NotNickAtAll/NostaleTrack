@@ -5,7 +5,7 @@
 
 <title>The Nostale Helper</title>
 
-<link rel="icon" href="favicon.png?v=6">
+<link rel="icon" href="favicon.png?v=7">
 
 <style>
 
@@ -70,9 +70,8 @@ margin-bottom:10px;
 }
 
 .details{
-margin-top:15px;
-border-top:1px solid #333;
-padding-top:10px;
+background:#181818;
+padding:10px 0;
 }
 
 .updated{
@@ -103,14 +102,12 @@ color:#aaa;
 
 <div id="zoneContainer"></div>
 
-<div id="fishDetails" class="details"></div>
-
 </div>
 
 </div>
 
 
-<!-- Time Space -->
+<!-- Group Time Space -->
 
 <div class="panel">
 
@@ -145,6 +142,8 @@ color:#aaa;
 
 <script>
 
+let openedRow = null
+
 function timeAgo(timestamp){
 
 const now=Math.floor(Date.now()/1000)
@@ -163,6 +162,7 @@ if(h<24) return h+" hr ago"
 return Math.floor(h/24)+" days ago"
 
 }
+
 
 async function loadFishing(){
 
@@ -190,7 +190,7 @@ row.innerHTML=
 "<span>"+zone.zone+"</span>"+
 "<span>"+zone.average_gold.toLocaleString()+"</span>"
 
-row.onclick=()=>showFish(zone)
+row.onclick=()=>toggleFish(row,zone)
 
 container.appendChild(row)
 
@@ -201,37 +201,48 @@ document.getElementById("updatedTime").innerText=
 
 }
 
-function showFish(zone){
 
-const panel=document.getElementById("fishDetails")
+function toggleFish(row,zone){
 
-panel.innerHTML=""
+if(openedRow){
+openedRow.remove()
+openedRow=null
+}
+
+const details=document.createElement("div")
+
+details.className="details"
 
 const title=document.createElement("div")
 
-title.style.marginBottom="10px"
-
 title.style.fontWeight="bold"
+title.style.margin="10px 0"
 
 title.innerText="Fish in zone "+zone.zone
 
-panel.appendChild(title)
+details.appendChild(title)
 
 zone.fish.forEach(f=>{
 
-const row=document.createElement("div")
+const r=document.createElement("div")
 
-row.className="row"
+r.className="row"
 
-row.innerHTML=
+r.innerHTML=
 "<span>"+f.name+" ("+f.chance+")</span>"+
 "<span>"+f.value.toLocaleString()+"</span>"
 
-panel.appendChild(row)
+details.appendChild(r)
 
 })
 
+row.after(details)
+
+openedRow=details
+
 }
+
+
 
 async function loadTS(){
 
@@ -246,7 +257,7 @@ data.runs.forEach(run=>{
 
 const row=document.createElement("div")
 
-row.className="row clickable"
+row.className="row"
 
 row.innerHTML=
 "<span>"+run.range+"</span>"+
@@ -257,6 +268,7 @@ c.appendChild(row)
 })
 
 }
+
 
 async function loadGrinding(){
 
@@ -271,7 +283,7 @@ data.spots.forEach(s=>{
 
 const row=document.createElement("div")
 
-row.className="row clickable"
+row.className="row"
 
 row.innerHTML=
 "<span>"+s.name+"</span>"+
@@ -282,6 +294,7 @@ c.appendChild(row)
 })
 
 }
+
 
 async function loadAll(){
 
