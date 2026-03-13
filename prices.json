@@ -1,94 +1,394 @@
 {
-  "fish_prices": {
-
-    "giant_catfish": { "name": "Giant Catfish", "npc": 35000, "bazaar": 2799999 },
-    "silver_piranha": { "name": "Silver Piranha", "npc": 750, "bazaar": 21998 },
-    "bespectacled_carp": { "name": "Bespectacled Carp", "npc": 860, "bazaar": 1500 },
-    "chubby_carp": { "name": "Chubby Carp", "npc": 860, "bazaar": 863 },
-    "catfish": { "name": "Catfish", "npc": 2650, "bazaar": 100000 },
-
-    "chocolate_shark": { "name": "Chocolate Shark", "npc": 55000, "bazaar": 299000 },
-    "red_starfish": { "name": "Red Starfish", "npc": 800, "bazaar": 799 },
-    "blowfish": { "name": "Blowfish", "npc": 900, "bazaar": 1300 },
-    "tipsy_pollock": { "name": "Tipsy Pollock", "npc": 900, "bazaar": 915 },
-    "red_pollock": { "name": "Red Pollock", "npc": 3400, "bazaar": 27500 },
-
-    "arowana": { "name": "Arowana", "npc": 60000, "bazaar": 63197 },
-    "green_sunfish": { "name": "Green Sunfish", "npc": 900, "bazaar": 887 },
-    "red_bespectacled_carp": { "name": "Red Bespectacled Carp", "npc": 950, "bazaar": 945 },
-    "salmon": { "name": "Salmon", "npc": 4500, "bazaar": 24999 },
-
-    "megalodon": { "name": "Megalodon", "npc": 70000, "bazaar": 70000 },
-    "red_blowfish": { "name": "Red Blowfish", "npc": 1200, "bazaar": 1200 },
-    "blue_starfish": { "name": "Blue Starfish", "npc": 950, "bazaar": 950 },
-    "red_batstar": { "name": "Red Batstar", "npc": 1200, "bazaar": 1248 },
-    "deep_sea_pollock": { "name": "Deep-Sea Pollock", "npc": 5000, "bazaar": 49999 },
-
-    "frigus": { "name": "Frigus", "npc": 80000, "bazaar": 249999 },
-    "blue_coelacanth": { "name": "Blue Coelacanth", "npc": 80000, "bazaar": 280000 },
-    "blue_batstar": { "name": "Blue Batstar", "npc": 1300, "bazaar": 1347 },
-    "squid": { "name": "Squid", "npc": 1400, "bazaar": 1487 },
-    "rugged_sea_turtle": { "name": "Rugged Sea Turtle", "npc": 5300, "bazaar": 28999 },
-    "violet_sea_turtle": { "name": "Violet Sea Turtle", "npc": 5300, "bazaar": 9900 },
-
-    "river_tyrant": { "name": "River Tyrant", "npc": 170000, "bazaar": 334997 },
-    "really_chubby_carp": { "name": "Really Chubby Carp", "npc": 1100, "bazaar": 1100 },
-    "river_guppy": { "name": "River Guppy", "npc": 2800, "bazaar": 2945 },
-    "red_sunfish": { "name": "Red Sunfish", "npc": 950, "bazaar": 996 },
-    "snakehead": { "name": "Snakehead", "npc": 1500, "bazaar": 1496 },
-    "river_goby": { "name": "River Goby", "npc": 6000, "bazaar": 11896 },
-
-    "octopus": { "name": "Octopus", "npc": 100000, "bazaar": 1000000 },
-    "sea_fossil": { "name": "Sea Fossil", "npc": 100000, "bazaar": 289999 },
-    "porky_pollock": { "name": "Porky Pollock", "npc": 900, "bazaar": 110000 },
-    "molly": { "name": "Molly", "npc": 2900, "bazaar": 3899 },
-    "fighting_fish": { "name": "Fighting Fish", "npc": 2900, "bazaar": 2980 },
-    "tuna": { "name": "Tuna", "npc": 5800, "bazaar": 9000 },
-    "tropical_pollock": { "name": "Tropical Pollock", "npc": 5500, "bazaar": 80000 },
-
-    "black_speckled_sturgeon": { "name": "Black Speckled Sturgeon", "npc": 135000, "bazaar": 136900 },
-    "armoured_sturgeon": { "name": "Armoured Sturgeon", "npc": 135000, "bazaar": 135999 },
-    "blue_piranha": { "name": "Blue Piranha", "npc": 900, "bazaar": 20998 },
-    "green_piranha": { "name": "Green Piranha", "npc": 900, "bazaar": 20498 },
-    "red_snakehead": { "name": "Red Snakehead", "npc": 3500, "bazaar": 3494 },
-    "suckermouth_catfish": { "name": "Suckermouth Catfish", "npc": 5000, "bazaar": 6296 },
-    "stick_fish": { "name": "Stick Fish", "npc": 4500, "bazaar": 40000 },
-    "sockeye_salmon": { "name": "Sockeye Salmon", "npc": 6500, "bazaar": 14999 },
-    "goby_minnow": { "name": "Goby Minnow", "npc": 6500, "bazaar": 11999 },
-    "eel": { "name": "Eel", "npc": 6500, "bazaar": 3000 },
-
-    "black_alligator": { "name": "Black Alligator", "npc": 175000, "bazaar": 949999 },
-    "frogfish": { "name": "Frogfish", "npc": 175000, "bazaar": 400000 },
-    "silver_suckermouth_catfish": { "name": "Silver Suckermouth Catfish", "npc": 5500, "bazaar": 10978 },
-    "predatory_goby_minnow": { "name": "Predatory Goby Minnow", "npc": 3518, "bazaar": 11999 },
-    "river_ray": { "name": "River Ray", "npc": 6500, "bazaar": 11996 },
-
-    "blessed_frogfish": { "name": "Blessed Frogfish", "npc": 190000, "bazaar": 899999 },
-    "river_guardian": { "name": "River Guardian", "npc": 190000, "bazaar": 189881 },
-    "red_suckermouth_catfish": { "name": "Red Suckermouth Catfish", "npc": 6000, "bazaar": 6296 },
-    "green_catfish": { "name": "Green Catfish", "npc": 6500, "bazaar": 30998 },
-    "green_river_goby": { "name": "Green River Goby", "npc": 6500, "bazaar": 44498 },
-    "yellow_spotted_river_ray": { "name": "Yellow Spotted River Ray", "npc": 7000, "bazaar": 19699 },
-    "vampire_fish": { "name": "Vampire Fish", "npc": 7000, "bazaar": 6999 },
-    "leaffish": { "name": "Leaffish", "npc": 6500, "bazaar": 6583 },
-    "terrapin": { "name": "Terrapin", "npc": 6500, "bazaar": 18000 },
-    "ultramarine_armoured_terrapin": { "name": "Ultramarine Armoured Terrapin", "npc": 6500, "bazaar": 10111 },
-
-    "flame_stingray": { "name": "Flame Stingray", "npc": 170000, "bazaar": 294999 },
-    "blue_flame_stingray": { "name": "Blue Flame Stingray", "npc": 170000, "bazaar": 308000 },
-    "lava_tyrant": { "name": "Lava Tyrant", "npc": 170000, "bazaar": 999998 },
-    "charred_bunfish": { "name": "Charred Bunfish", "npc": 700, "bazaar": 1879 },
-    "bunfish": { "name": "Bunfish", "npc": 700, "bazaar": 389420 },
-    "piquant_bunfish": { "name": "Piquant Bunfish", "npc": 1000, "bazaar": 9997 },
-    "lava_snapper": { "name": "Lava Snapper", "npc": 1500, "bazaar": 170000 },
-    "blue_flame_snapper": { "name": "Blue-Flame Snapper", "npc": 2000, "bazaar": 999 },
-    "black_lava_snapper": { "name": "Black Lava Snapper", "npc": 3000, "bazaar": 8887 },
-    "lava_shark": { "name": "Lava Shark", "npc": 7000, "bazaar": 6999 },
-    "blue_lava_shark": { "name": "Blue Lava Shark", "npc": 8000, "bazaar": 17100 },
-    "lava_horseshoe_crab": { "name": "Lava Horseshoe Crab", "npc": 7000, "bazaar": 7390 },
-    "red_lava_horseshoe_crab": { "name": "Red Lava Horseshoe Crab", "npc": 8000, "bazaar": 114000 },
-    "lava_sea_snail": { "name": "Lava Sea Snail", "npc": 7000, "bazaar": 6998 },
-    "red_lava_sea_snail": { "name": "Red Lava Sea Snail", "npc": 8000, "bazaar": 16399 }
-
-  }
+    "fish_prices": {
+        "giant_catfish": {
+            "name": "Giant Catfish",
+            "npc": 35000,
+            "bazaar": 398000
+        },
+        "silver_piranha": {
+            "name": "Silver Piranha",
+            "npc": 750,
+            "bazaar": 20500
+        },
+        "bespectacled_carp": {
+            "name": "Bespectacled Carp",
+            "npc": 860,
+            "bazaar": 1265
+        },
+        "chubby_carp": {
+            "name": "Chubby Carp",
+            "npc": 860,
+            "bazaar": 863
+        },
+        "catfish": {
+            "name": "Catfish",
+            "npc": 2650,
+            "bazaar": 15000
+        },
+        "chocolate_shark": {
+            "name": "Chocolate Shark",
+            "npc": 55000,
+            "bazaar": 90000
+        },
+        "red_starfish": {
+            "name": "Red Starfish",
+            "npc": 800,
+            "bazaar": 799
+        },
+        "blowfish": {
+            "name": "Blowfish",
+            "npc": 900,
+            "bazaar": 899
+        },
+        "tipsy_pollock": {
+            "name": "Tipsy Pollock",
+            "npc": 900,
+            "bazaar": 915
+        },
+        "red_pollock": {
+            "name": "Red Pollock",
+            "npc": 3400,
+            "bazaar": 344443
+        },
+        "arowana": {
+            "name": "Arowana",
+            "npc": 60000,
+            "bazaar": 63197
+        },
+        "green_sunfish": {
+            "name": "Green Sunfish",
+            "npc": 900,
+            "bazaar": 900
+        },
+        "red_bespectacled_carp": {
+            "name": "Red Bespectacled Carp",
+            "npc": 950,
+            "bazaar": 950
+        },
+        "salmon": {
+            "name": "Salmon",
+            "npc": 4500,
+            "bazaar": 70000
+        },
+        "megalodon": {
+            "name": "Megalodon",
+            "npc": 70000,
+            "bazaar": 70000
+        },
+        "red_blowfish": {
+            "name": "Red Blowfish",
+            "npc": 1200,
+            "bazaar": 1200
+        },
+        "blue_starfish": {
+            "name": "Blue Starfish",
+            "npc": 950,
+            "bazaar": 950
+        },
+        "red_batstar": {
+            "name": "Red Batstar",
+            "npc": 1200,
+            "bazaar": 1248
+        },
+        "deep_sea_pollock": {
+            "name": "Deep-Sea Pollock",
+            "npc": 5000,
+            "bazaar": 44444
+        },
+        "frigus": {
+            "name": "Frigus",
+            "npc": 80000,
+            "bazaar": 249999
+        },
+        "blue_coelacanth": {
+            "name": "Blue Coelacanth",
+            "npc": 80000,
+            "bazaar": 280000
+        },
+        "blue_batstar": {
+            "name": "Blue Batstar",
+            "npc": 1300,
+            "bazaar": 1347
+        },
+        "squid": {
+            "name": "Squid",
+            "npc": 1400,
+            "bazaar": 1486
+        },
+        "rugged_sea_turtle": {
+            "name": "Rugged Sea Turtle",
+            "npc": 5300,
+            "bazaar": 28000
+        },
+        "violet_sea_turtle": {
+            "name": "Violet Sea Turtle",
+            "npc": 5300,
+            "bazaar": 9000
+        },
+        "river_tyrant": {
+            "name": "River Tyrant",
+            "npc": 170000,
+            "bazaar": 334997
+        },
+        "really_chubby_carp": {
+            "name": "Really Chubby Carp",
+            "npc": 1100,
+            "bazaar": 1100
+        },
+        "river_guppy": {
+            "name": "River Guppy",
+            "npc": 2800,
+            "bazaar": 2945
+        },
+        "red_sunfish": {
+            "name": "Red Sunfish",
+            "npc": 950,
+            "bazaar": 996
+        },
+        "snakehead": {
+            "name": "Snakehead",
+            "npc": 1500,
+            "bazaar": 1496
+        },
+        "river_goby": {
+            "name": "River Goby",
+            "npc": 6000,
+            "bazaar": 11000
+        },
+        "octopus": {
+            "name": "Octopus",
+            "npc": 100000,
+            "bazaar": 124000
+        },
+        "sea_fossil": {
+            "name": "Sea Fossil",
+            "npc": 100000,
+            "bazaar": 289000
+        },
+        "porky_pollock": {
+            "name": "Porky Pollock",
+            "npc": 900,
+            "bazaar": 4600
+        },
+        "molly": {
+            "name": "Molly",
+            "npc": 2900,
+            "bazaar": 3800
+        },
+        "fighting_fish": {
+            "name": "Fighting Fish",
+            "npc": 2900,
+            "bazaar": 2980
+        },
+        "tuna": {
+            "name": "Tuna",
+            "npc": 5800,
+            "bazaar": 13100
+        },
+        "tropical_pollock": {
+            "name": "Tropical Pollock",
+            "npc": 5500,
+            "bazaar": 79999
+        },
+        "black_speckled_sturgeon": {
+            "name": "Black Speckled Sturgeon",
+            "npc": 135000,
+            "bazaar": 136900
+        },
+        "armoured_sturgeon": {
+            "name": "Armoured Sturgeon",
+            "npc": 135000,
+            "bazaar": 135999
+        },
+        "blue_piranha": {
+            "name": "Blue Piranha",
+            "npc": 900,
+            "bazaar": 20800
+        },
+        "green_piranha": {
+            "name": "Green Piranha",
+            "npc": 900,
+            "bazaar": 20498
+        },
+        "red_snakehead": {
+            "name": "Red Snakehead",
+            "npc": 3500,
+            "bazaar": 4300
+        },
+        "suckermouth_catfish": {
+            "name": "Suckermouth Catfish",
+            "npc": 5000,
+            "bazaar": 5300
+        },
+        "stick_fish": {
+            "name": "Stick Fish",
+            "npc": 4500,
+            "bazaar": 4900
+        },
+        "sockeye_salmon": {
+            "name": "Sockeye Salmon",
+            "npc": 6500,
+            "bazaar": 86998
+        },
+        "goby_minnow": {
+            "name": "Goby Minnow",
+            "npc": 6500,
+            "bazaar": 6500
+        },
+        "eel": {
+            "name": "Eel",
+            "npc": 6500,
+            "bazaar": 73800
+        },
+        "black_alligator": {
+            "name": "Black Alligator",
+            "npc": 175000,
+            "bazaar": 949000
+        },
+        "frogfish": {
+            "name": "Frogfish",
+            "npc": 175000,
+            "bazaar": 1440000
+        },
+        "silver_suckermouth_catfish": {
+            "name": "Silver Suckermouth Catfish",
+            "npc": 5500,
+            "bazaar": 10900
+        },
+        "predatory_goby_minnow": {
+            "name": "Predatory Goby Minnow",
+            "npc": 3518,
+            "bazaar": 11800
+        },
+        "river_ray": {
+            "name": "River Ray",
+            "npc": 6500,
+            "bazaar": 11990
+        },
+        "blessed_frogfish": {
+            "name": "Blessed Frogfish",
+            "npc": 190000,
+            "bazaar": 899999
+        },
+        "river_guardian": {
+            "name": "River Guardian",
+            "npc": 190000,
+            "bazaar": 189881
+        },
+        "red_suckermouth_catfish": {
+            "name": "Red Suckermouth Catfish",
+            "npc": 6000,
+            "bazaar": 6296
+        },
+        "green_catfish": {
+            "name": "Green Catfish",
+            "npc": 6500,
+            "bazaar": 30799
+        },
+        "green_river_goby": {
+            "name": "Green River Goby",
+            "npc": 6500,
+            "bazaar": 44399
+        },
+        "yellow_spotted_river_ray": {
+            "name": "Yellow Spotted River Ray",
+            "npc": 7000,
+            "bazaar": 19699
+        },
+        "vampire_fish": {
+            "name": "Vampire Fish",
+            "npc": 7000,
+            "bazaar": 6999
+        },
+        "leaffish": {
+            "name": "Leaffish",
+            "npc": 6500,
+            "bazaar": 6583
+        },
+        "terrapin": {
+            "name": "Terrapin",
+            "npc": 6500,
+            "bazaar": 6999
+        },
+        "ultramarine_armoured_terrapin": {
+            "name": "Ultramarine Armoured Terrapin",
+            "npc": 6500,
+            "bazaar": 10111
+        },
+        "flame_stingray": {
+            "name": "Flame Stingray",
+            "npc": 170000,
+            "bazaar": 170000
+        },
+        "blue_flame_stingray": {
+            "name": "Blue Flame Stingray",
+            "npc": 170000,
+            "bazaar": 308000
+        },
+        "lava_tyrant": {
+            "name": "Lava Tyrant",
+            "npc": 170000,
+            "bazaar": 950000
+        },
+        "charred_bunfish": {
+            "name": "Charred Bunfish",
+            "npc": 700,
+            "bazaar": 1878
+        },
+        "bunfish": {
+            "name": "Bunfish",
+            "npc": 700,
+            "bazaar": 1138
+        },
+        "piquant_bunfish": {
+            "name": "Piquant Bunfish",
+            "npc": 1000,
+            "bazaar": 8900
+        },
+        "lava_snapper": {
+            "name": "Lava Snapper",
+            "npc": 1500,
+            "bazaar": 6999
+        },
+        "blue_flame_snapper": {
+            "name": "Blue-Flame Snapper",
+            "npc": 2000,
+            "bazaar": 2494
+        },
+        "black_lava_snapper": {
+            "name": "Black Lava Snapper",
+            "npc": 3000,
+            "bazaar": 7000
+        },
+        "lava_shark": {
+            "name": "Lava Shark",
+            "npc": 7000,
+            "bazaar": 6999
+        },
+        "blue_lava_shark": {
+            "name": "Blue Lava Shark",
+            "npc": 8000,
+            "bazaar": 16000
+        },
+        "lava_horseshoe_crab": {
+            "name": "Lava Horseshoe Crab",
+            "npc": 7000,
+            "bazaar": 7390
+        },
+        "red_lava_horseshoe_crab": {
+            "name": "Red Lava Horseshoe Crab",
+            "npc": 8000,
+            "bazaar": 105000
+        },
+        "lava_sea_snail": {
+            "name": "Lava Sea Snail",
+            "npc": 7000,
+            "bazaar": 6998
+        },
+        "red_lava_sea_snail": {
+            "name": "Red Lava Sea Snail",
+            "npc": 8000,
+            "bazaar": 15200
+        }
+    }
 }
