@@ -220,7 +220,10 @@ row.className="row clickable"
 
 row.innerHTML =
 "<span>"+zone.zone+"</span>"+
-"<span>🪙 "+zone.npc_average_gold.toLocaleString()+"</span>"
+"<span class='fishPrices'>" +
+"<span class='npc'>🪙 "+zone.npc_average_gold.toLocaleString()+"</span> / " +
+"<span class='bazaar'>🏪 "+zone.bazaar_average_gold.toLocaleString()+"</span>" +
+"</span>"
 
 row.onclick=()=>toggleFish(row,zone)
 
