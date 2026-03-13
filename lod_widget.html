@@ -1,0 +1,148 @@
+
+<div class="lodBox">
+
+<h2>🔥 Land of Death</h2>
+
+
+<div class="lodRow">
+<span class="lodTime" data-unix="1773352800"></span>
+-
+<span class="lodTime" data-unix="1773360000"></span>
+| CH 7
+| <span class="countdown" data-start="1773352800" data-end="1773360000"></span>
+</div>
+
+
+<div class="lodRow">
+<span class="lodTime" data-unix="1773363600"></span>
+-
+<span class="lodTime" data-unix="1773370800"></span>
+| CH 1
+| <span class="countdown" data-start="1773363600" data-end="1773370800"></span>
+</div>
+
+
+<div class="lodRow">
+<span class="lodTime" data-unix="1773374400"></span>
+-
+<span class="lodTime" data-unix="1773381600"></span>
+| CH 1
+| <span class="countdown" data-start="1773374400" data-end="1773381600"></span>
+</div>
+
+
+<div class="lodRow">
+<span class="lodTime" data-unix="1773385200"></span>
+-
+<span class="lodTime" data-unix="1773392400"></span>
+| CH 2
+| <span class="countdown" data-start="1773385200" data-end="1773392400"></span>
+</div>
+
+
+<div class="lodRow">
+<span class="lodTime" data-unix="1773396000"></span>
+-
+<span class="lodTime" data-unix="1773403200"></span>
+| CH 3
+| <span class="countdown" data-start="1773396000" data-end="1773403200"></span>
+</div>
+
+
+<div class="lodRow">
+<span class="lodTime" data-unix="1773406800"></span>
+-
+<span class="lodTime" data-unix="1773414000"></span>
+| CH 2,3,6
+| <span class="countdown" data-start="1773406800" data-end="1773414000"></span>
+</div>
+
+
+<div class="lodRow">
+<span class="lodTime" data-unix="1773417600"></span>
+-
+<span class="lodTime" data-unix="1773424800"></span>
+| CH 4,5,7
+| <span class="countdown" data-start="1773417600" data-end="1773424800"></span>
+</div>
+
+
+<div class="lodRow">
+<span class="lodTime" data-unix="1773428400"></span>
+-
+<span class="lodTime" data-unix="1773435600"></span>
+| CH 4,5,6
+| <span class="countdown" data-start="1773428400" data-end="1773435600"></span>
+</div>
+
+
+</div>
+
+<script>
+
+function formatTime(unix){
+const d = new Date(unix*1000)
+return d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})
+}
+
+function update(){
+
+const now = Math.floor(Date.now()/1000)
+
+document.querySelectorAll(".lodTime").forEach(el=>{
+const t = el.dataset.unix
+el.innerText = formatTime(t)
+})
+
+document.querySelectorAll(".countdown").forEach(el=>{
+
+const start = parseInt(el.dataset.start)
+const end = parseInt(el.dataset.end)
+
+if(now >= start && now <= end){
+el.innerText = "OPEN NOW"
+return
+}
+
+const diff = start - now
+
+if(diff <= 0){
+el.innerText = "Finished"
+return
+}
+
+const m = Math.floor(diff/60)
+const s = diff % 60
+
+el.innerText = m + "m " + s + "s"
+
+})
+
+}
+
+update()
+setInterval(update,1000)
+
+</script>
+
+<style>
+
+.lodBox{
+background:#1f1f1f;
+padding:15px;
+border-radius:12px;
+width:600px;
+margin:auto;
+margin-bottom:25px;
+}
+
+.lodRow{
+padding:6px 0;
+border-bottom:1px solid #333;
+}
+
+.lodRow:last-child{
+border-bottom:none;
+}
+
+</style>
