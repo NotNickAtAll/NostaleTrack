@@ -265,24 +265,108 @@ openedRow=details
 
 }
 
+function toggleTS(row,run){
 
+if(openedRow){
+openedRow.remove()
+openedRow=null
+}
+
+const recipes = {
+"35-99":[
+{ id:"seed_of_power", name:"Seed of Power", amount:18 },
+{ id:"new_moon_crystal", name:"New Moon Crystal", amount:6 },
+{ id:"group_time_space_piece", name:"Group Time-space Piece", amount:1 }
+],
+
+"45-99":[
+{ id:"seed_of_power", name:"Seed of Power", amount:24 },
+{ id:"half_moon_crystal", name:"Half Moon Crystal", amount:3 },
+{ id:"group_time_space_piece", name:"Group Time-space Piece", amount:1 }
+],
+
+"50-99":[
+{ id:"seed_of_power", name:"Seed of Power", amount:31 },
+{ id:"half_moon_crystal", name:"Half Moon Crystal", amount:5 },
+{ id:"group_time_space_piece", name:"Group Time-space Piece", amount:1 }
+]
+}
+
+const details = document.createElement("div")
+details.className="details"
+
+const title = document.createElement("div")
+title.style.fontWeight="bold"
+title.style.margin="10px 0"
+title.innerText = "TS "+run.range
+details.appendChild(title)
+
+recipes[run.range].forEach(m=>{
+
+const r = document.createElement("div")
+r.className="row"
+
+r.innerHTML =
+"<span class='fishName'>"+
+"<img src='ItemPng/"+m.id+".png' class='itemIcon'>"+
+m.name+" x"+m.amount+
+"</span>"+
+"<span class='npc'>Material</span>"
+
+details.appendChild(r)
+
+})
+
+const rewardRow = document.createElement("div")
+rewardRow.className="row"
+
+rewardRow.innerHTML =
+"<span class='fishName'>"+
+"<img src='ItemPng/gillion_stone.png' class='itemIcon'>"+
+"Gillion Stone"+
+"</span>"+
+"<span class='bazaar'>"+
+"Solo: "+run.solo_net_profit.toLocaleString()+
+" | x3: "+run.trio_net_profit.toLocaleString()+
+"</span>"
+
+details.appendChild(rewardRow)
+
+const stats = document.createElement("div")
+stats.className="row"
+
+stats.innerHTML =
+"<span>Gold/hour</span>"+
+"<span>"+
+"👤 "+run.solo_gold_hour.toLocaleString()+
+" | 👥 "+run.trio_gold_hour.toLocaleString()+
+"</span>"
+
+details.appendChild(stats)
+
+row.after(details)
+openedRow=details
+
+}
 
 async function loadTS(){
 
-const r=await fetch("./group_time_space.json?"+Date.now())
-const data=await r.json()
+const r = await fetch("./group_time_space.json?"+Date.now())
+const data = await r.json()
 
-const c=document.getElementById("tsContainer")
+const c = document.getElementById("tsContainer")
 c.innerHTML=""
 
 data.runs.forEach(run=>{
 
-const row=document.createElement("div")
-row.className="row"
+const row = document.createElement("div")
+row.className="row clickable"
 
 row.innerHTML =
 "<span>"+run.range+"</span>"+
 "<span>"+run.trio_gold_hour.toLocaleString()+"/h</span>"
+
+row.onclick = ()=>toggleTS(row,run)
 
 c.appendChild(row)
 
