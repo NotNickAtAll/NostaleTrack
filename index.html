@@ -4,7 +4,7 @@
 
 <title>Nostale Market Tracker</title>
 
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" href="favicon.png?v=4">
 
 <style>
 
@@ -46,7 +46,7 @@ h1{
 
 .updated{
     margin-top:20px;
-    font-size:12px;
+    font-size:13px;
     color:#aaa;
 }
 
@@ -74,11 +74,30 @@ Loading fishing zones...
 
 <script>
 
+function timeAgo(timestamp){
+
+    const now = Math.floor(Date.now()/1000);
+    const diff = now - timestamp;
+
+    if(diff < 60) return diff + " seconds ago";
+
+    const minutes = Math.floor(diff/60);
+
+    if(minutes < 60) return minutes + " minutes ago";
+
+    const hours = Math.floor(minutes/60);
+
+    if(hours < 24) return hours + " hours ago";
+
+    const days = Math.floor(hours/24);
+
+    return days + " days ago";
+}
+
 async function loadData(){
 
     try{
 
-        // Fetch JSON with cache bypass
         const response = await fetch("./fish_prices.json?nocache=" + Date.now());
 
         if(!response.ok){
@@ -87,7 +106,6 @@ async function loadData(){
 
         const data = await response.json();
 
-        // Best fishing zone
         const best = data.best_zone;
 
         document.getElementById("bestZone").innerHTML =
@@ -95,12 +113,11 @@ async function loadData(){
             best.zone + " → " +
             best.average_gold.toLocaleString() + " gold / catch";
 
-        // Zone list
         const container = document.getElementById("zoneContainer");
         container.innerHTML = "";
 
         data.zones
-            .sort((a,b)=>b.average_gold - a.average_gold)
+            .sort((a,b)=>b.average_gold-a.average_gold)
             .forEach(z => {
 
                 const row = document.createElement("div");
@@ -115,7 +132,7 @@ async function loadData(){
             });
 
         document.getElementById("updatedTime").innerText =
-            "Last updated: " + data.updated;
+            "Last updated: " + timeAgo(data.updated);
 
     }
     catch(err){
@@ -129,11 +146,9 @@ async function loadData(){
 
 }
 
-// Initial load
 loadData();
 
-// Refresh every 30 seconds
-setInterval(loadData, 30000);
+setInterval(loadData,30000);
 
 </script>
 
