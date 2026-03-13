@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Nostale Tracker</title>
+<title>Nostale Market Tracker</title>
 
 <style>
 body{
@@ -9,29 +9,40 @@ body{
     background:#121212;
     color:white;
     text-align:center;
-    padding-top:80px;
+    padding-top:60px;
 }
 
 h1{
-    font-size:40px;
+    font-size:42px;
 }
 
 .card{
     background:#1f1f1f;
     padding:20px;
-    margin:10px auto;
-    width:320px;
-    border-radius:10px;
+    margin:20px auto;
+    width:380px;
+    border-radius:12px;
 }
 
 .price{
     display:flex;
     justify-content:space-between;
-    padding:5px 0;
+    padding:6px 0;
+    border-bottom:1px solid #333;
+}
+
+.price:last-child{
+    border-bottom:none;
+}
+
+.best{
+    font-size:20px;
+    color:#ffcc00;
+    margin-bottom:10px;
 }
 
 .updated{
-    margin-top:20px;
+    margin-top:15px;
     font-size:12px;
     color:#aaa;
 }
@@ -43,38 +54,60 @@ h1{
 
 <h1>Nostale Market Tracker</h1>
 
-<div class="card" id="fishContainer">
-Loading prices...
+<div class="card">
+    <div id="bestZone" class="best">Loading best zone...</div>
+</div>
+
+<div class="card" id="zoneContainer">
+Loading fishing zones...
 </div>
 
 <div class="updated" id="updatedTime"></div>
 
 <script>
 
-fetch("fish_prices.json")
-.then(response => response.json())
-.then(data => {
+async function loadData(){
 
-    const container = document.getElementById("fishContainer");
-    container.innerHTML = "";
+    try{
 
-    data.zones.forEach(z => {
+        const response = await fetch("fish_prices.json");
+        const data = await response.json();
 
-        const row = document.createElement("div");
-        row.className = "price";
+        // BEST ZONE
+        const best = data.best_zone;
+        document.getElementById("bestZone").innerHTML =
+            "🔥 Best Fishing Zone: <br>" +
+            best.zone + " → " +
+            best.average_gold.toLocaleString() + " gold / catch";
 
-        row.innerHTML =
-            "<span>Zone " + z.zone + "</span>" +
-            "<span>" + z.average_gold.toLocaleString() + " gold</span>";
+        // ZONES LIST
+        const container = document.getElementById("zoneContainer");
+        container.innerHTML = "";
 
-        container.appendChild(row);
+        data.zones
+            .sort((a,b)=>b.average_gold-a.average_gold)
+            .forEach(z => {
 
-    });
+            const row = document.createElement("div");
+            row.className = "price";
 
-    document.getElementById("updatedTime").innerText =
-        "Last updated: " + data.updated;
+            row.innerHTML =
+                "<span>Zone " + z.zone + "</span>" +
+                "<span>" + z.average_gold.toLocaleString() + "</span>";
 
-});
+            container.appendChild(row);
+
+        });
+
+        document.getElementById("updatedTime").innerText =
+            "Last updated: " + data.updated;
+
+    }catch(err){
+        console.error(err);
+    }
+}
+
+loadData();
 
 </script>
 
