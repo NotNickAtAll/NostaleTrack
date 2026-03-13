@@ -4,6 +4,7 @@
       "zone":"1-50",
       "npc_average_gold":11300,
       "bazaar_average_gold":15800,
+
       "fish":[
         {
           "name":"Giant Catfish",
@@ -15,9 +16,30 @@
         {
           "name":"Silver Piranha",
           "chance":"48.8%",
-          "npc_value":20000,
-          "bazaar_value":31000,
+          "npc_value":750,
+          "bazaar_value":1200,
           "icon":"FishPng/silver_piranha.png"
+        },
+        {
+          "name":"Bespectacled Carp",
+          "chance":"20%",
+          "npc_value":860,
+          "bazaar_value":1400,
+          "icon":"FishPng/bespectacled_carp.png"
+        },
+        {
+          "name":"Chubby Carp",
+          "chance":"20%",
+          "npc_value":860,
+          "bazaar_value":1300,
+          "icon":"FishPng/chubby_carp.png"
+        },
+        {
+          "name":"Catfish",
+          "chance":"10%",
+          "npc_value":2650,
+          "bazaar_value":4200,
+          "icon":"FishPng/catfish.png"
         }
       ]
     }
@@ -29,8 +51,8 @@
   },
 
   "best_bazaar_zone":{
-    "zone":"10-50",
-    "bazaar_average_gold":15500
+    "zone":"1-50",
+    "bazaar_average_gold":15800
   },
 
   "updated":1710330000
