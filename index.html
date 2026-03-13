@@ -3,6 +3,16 @@
 
 <head>
 
+<div id="lodWidget"></div>
+
+<script>
+fetch("lod_widget.html")
+.then(r=>r.text())
+.then(html=>{
+document.getElementById("lodWidget").innerHTML=html
+})
+</script>
+  
 <title>The Nostale Helper</title>
 <link rel="icon" href="favicon.png?v=9">
 
