@@ -3,21 +3,8 @@
 
 <head>
 
-<div class="eventsContainer">
-
-<div class="eventBox">
-<div class="eventTitle">🔥 Land of Death</div>
-<div id="lodNext"></div>
-<div id="lodRows"></div>
-</div>
-
-<div class="eventBox">
-<div class="eventTitle">🌿 Land of Life</div>
-<div id="lolNext"></div>
-<div id="lolRows"></div>
-</div>
-
-</div>
+<meta charset="UTF-8">
+<title>Nostale Helper</title>
 
 <style>
 
@@ -69,7 +56,66 @@ color:#7CFF8A;
 
 </style>
 
+</head>
+
+<body>
+
+
+<!-- EVENT WIDGETS -->
+
+<div class="eventsContainer">
+
+<div class="eventBox">
+<div class="eventTitle">🔥 Land of Death</div>
+<div id="lodNext"></div>
+<div id="lodRows"></div>
+</div>
+
+<div class="eventBox">
+<div class="eventTitle">🌿 Land of Life</div>
+<div id="lolNext"></div>
+<div id="lolRows"></div>
+</div>
+
+</div>
+
+
+<h1>The Nostale Helper</h1>
+
+
+<div class="container">
+
+<div class="panel">
+<div class="card">
+<div class="title">🎣 Fishing</div>
+<div id="bestZone" class="best">Loading...</div>
+<div id="zoneContainer"></div>
+</div>
+</div>
+
+<div class="panel">
+<div class="card">
+<div class="title">🌀 Group Time Space</div>
+<div id="tsContainer">Loading...</div>
+</div>
+</div>
+
+<div class="panel">
+<div class="card">
+<div class="title">⚔ Grinding Spots</div>
+<div id="grindContainer">Loading...</div>
+</div>
+</div>
+
+</div>
+
+<div id="updatedTime" class="updated"></div>
+
+
+
 <script>
+
+/* ---------------- EVENT WIDGET ---------------- */
 
 function formatTime(d){
 return d.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})
@@ -78,24 +124,18 @@ return d.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})
 function formatCountdown(diff){
 
 if(diff>=3600){
-
 const h=Math.floor(diff/3600)
 const m=Math.floor((diff%3600)/60)
-
 return h+"h "+m+"m"
-
 }else{
-
 const m=Math.floor(diff/60)
 const s=Math.floor(diff%60)
-
 return m+"m "+s+"s"
-
 }
 
 }
 
-function buildEvent(schedule,rowsContainer,nextContainer){
+function buildEvent(schedule,rowsContainer){
 
 const slots=[]
 
@@ -148,13 +188,9 @@ nextIndex=i
 let visible=[]
 
 if(openIndex!==-1){
-
 visible=[openIndex,openIndex+1,openIndex+2]
-
 }else{
-
 visible=[nextIndex,nextIndex+1,nextIndex+2]
-
 }
 
 slots.forEach(slot=>slot.row.style.display="none")
@@ -180,7 +216,6 @@ row.classList.add("active")
 }else{
 
 row.classList.remove("active")
-
 const diff=(slot.start-now)/1000
 count.innerText=formatCountdown(diff)
 
@@ -193,13 +228,11 @@ let banner=""
 if(openIndex!==-1){
 
 const diff=(slots[openIndex].end-now)/1000
-
 banner="OPEN (CH "+slots[openIndex].ch+") — closes in "+formatCountdown(diff)
 
 }else if(nextIndex!==-1){
 
 const diff=(slots[nextIndex].start-now)/1000
-
 banner="Next in "+formatCountdown(diff)+" (CH "+slots[nextIndex].ch+")"
 
 }
@@ -207,6 +240,7 @@ banner="Next in "+formatCountdown(diff)+" (CH "+slots[nextIndex].ch+")"
 nextEl.innerText=banner
 
 }
+
 
 const lodSchedule=[
 {start:0,end:2,ch:"7"},
@@ -234,79 +268,54 @@ const lolSchedule=[
 {start:22,end:23,ch:""}
 ]
 
-const lodSlots=buildEvent(lodSchedule,
-document.getElementById("lodRows"),
-document.getElementById("lodNext")
+
+const lodSlots=buildEvent(
+lodSchedule,
+document.getElementById("lodRows")
 )
 
-const lolSlots=buildEvent(lolSchedule,
-document.getElementById("lolRows"),
-document.getElementById("lolNext")
+const lolSlots=buildEvent(
+lolSchedule,
+document.getElementById("lolRows")
 )
 
-function update(){
+function updateEvents(){
 
 updateEvent(lodSlots,document.getElementById("lodNext"))
 updateEvent(lolSlots,document.getElementById("lolNext"))
 
 }
 
-update()
-setInterval(update,1000)
+updateEvents()
+setInterval(updateEvents,1000)
 
-</script>
 
-<body>
 
-<h1>The Nostale Helper</h1>
-
-<div class="container">
-
-<div class="panel">
-<div class="card">
-<div class="title">🎣 Fishing</div>
-<div id="bestZone" class="best">Loading...</div>
-<div id="zoneContainer"></div>
-</div>
-</div>
-
-<div class="panel">
-<div class="card">
-<div class="title">🌀 Group Time Space</div>
-<div id="tsContainer">Loading...</div>
-</div>
-</div>
-
-<div class="panel">
-<div class="card">
-<div class="title">⚔ Grinding Spots</div>
-<div id="grindContainer">Loading...</div>
-</div>
-</div>
-
-</div>
-
-<div id="updatedTime" class="updated"></div>
-
-<script>
+/* ---------------- EXISTING GAME DATA ---------------- */
 
 let openedRow=null
 
 function timeAgo(timestamp){
+
 const now=Math.floor(Date.now()/1000)
 const diff=now-timestamp
 
 if(diff<60) return diff+" sec ago"
+
 const min=Math.floor(diff/60)
 
 if(min<60) return min+" min ago"
+
 const h=Math.floor(min/60)
 
 if(h<24) return h+" hr ago"
+
 return Math.floor(h/24)+" days ago"
+
 }
 
 
+/* Fishing */
 
 async function loadFishing(){
 
@@ -351,224 +360,23 @@ bestNPC.npc_average_gold.toLocaleString()+" gold / catch<br>"+
 bestBazaar.bazaar_average_gold.toLocaleString()+" gold / catch"
 
 
-const container=document.getElementById("zoneContainer")
-container.innerHTML=""
-
-zonesData.zones
-.sort((a,b)=>b.npc_average_gold-a.npc_average_gold)
-.forEach(zone=>{
-
-const row=document.createElement("div")
-row.className="row clickable"
-
-row.innerHTML=
-"<span>"+zone.zone+"</span>"+
-"<span class='fishPrices'>"+
-"<span class='npc'>🪙 "+zone.npc_average_gold.toLocaleString()+"</span> / "+
-"<span class='bazaar'>🏪 "+zone.bazaar_average_gold.toLocaleString()+"</span>"+
-"</span>"
-
-row.onclick=()=>toggleFish(row,zone)
-
-container.appendChild(row)
-
-})
-
 document.getElementById("updatedTime").innerText=
 "Fishing updated "+timeAgo(pricesData.updated)
 
 }
 
 
-
-function toggleFish(row,zone){
-
-if(openedRow){
-openedRow.remove()
-openedRow=null
-}
-
-const details=document.createElement("div")
-details.className="details"
-
-const title=document.createElement("div")
-title.style.fontWeight="bold"
-title.style.margin="10px 0"
-title.innerText="Fish in zone "+zone.zone
-
-details.appendChild(title)
-
-zone.fish.forEach(f=>{
-
-const r=document.createElement("div")
-r.className="row"
-
-r.innerHTML=
-"<span class='fishName'>"+
-"<img src='"+f.icon+"' class='fishIcon'>"+
-f.name+" ("+f.chance+"%)"+
-"</span>"+
-"<span class='fishPrices'>"+
-"<span class='npc'>🪙 "+f.npc_value.toLocaleString()+"</span> / "+
-"<span class='bazaar'>🏪 "+f.bazaar_value.toLocaleString()+"</span>"+
-"</span>"
-
-details.appendChild(r)
-
-})
-
-row.after(details)
-openedRow=details
-
-}
-
-function toggleTS(row,run){
-
-if(openedRow){
-openedRow.remove()
-openedRow=null
-}
-
-const recipes = {
-"35-99":[
-{ id:"seed_of_power", name:"Seed of Power", amount:18 },
-{ id:"new_moon_crystal", name:"New Moon Crystal", amount:6 },
-{ id:"group_time_space_piece", name:"Group Time-space Piece", amount:1 }
-],
-
-"45-99":[
-{ id:"seed_of_power", name:"Seed of Power", amount:24 },
-{ id:"half_moon_crystal", name:"Half Moon Crystal", amount:3 },
-{ id:"group_time_space_piece", name:"Group Time-space Piece", amount:1 }
-],
-
-"50-99":[
-{ id:"seed_of_power", name:"Seed of Power", amount:31 },
-{ id:"half_moon_crystal", name:"Half Moon Crystal", amount:5 },
-{ id:"group_time_space_piece", name:"Group Time-space Piece", amount:1 }
-]
-}
-
-const details = document.createElement("div")
-details.className="details"
-
-const title = document.createElement("div")
-title.style.fontWeight="bold"
-title.style.margin="10px 0"
-title.innerText = "TS "+run.range+" ("+run.time_minutes+" min)"
-details.appendChild(title)
-
-recipes[run.range].forEach(m=>{
-
-const r = document.createElement("div")
-r.className="row"
-
-r.innerHTML =
-"<span class='fishName'>"+
-"<img src='ItemPng/"+m.id+".png' class='itemIcon'>"+
-m.name+" x"+m.amount+
-"</span>"+
-"<span class='npc'>Material</span>"
-
-details.appendChild(r)
-
-})
-
-const rewardRow = document.createElement("div")
-rewardRow.className="row"
-
-rewardRow.innerHTML =
-"<span class='fishName'>"+
-"<img src='ItemPng/gillion_stone.png' class='itemIcon'>"+
-"Gillion Stone"+
-"</span>"+
-"<span class='bazaar'>"+
-"Solo: "+run.solo_net_profit.toLocaleString()+
-" | x3: "+run.trio_net_profit.toLocaleString()+
-"</span>"
-
-details.appendChild(rewardRow)
-
-const stats = document.createElement("div")
-stats.className="row"
-
-stats.innerHTML =
-"<span>Gold/hour</span>"+
-"<span>"+
-"👤 "+run.solo_gold_hour.toLocaleString()+
-" | 👥 "+run.trio_gold_hour.toLocaleString()+
-"</span>"
-
-details.appendChild(stats)
-
-row.after(details)
-openedRow=details
-
-}
-
-async function loadTS(){
-
-const r = await fetch("./group_time_space.json?"+Date.now())
-const data = await r.json()
-
-const c = document.getElementById("tsContainer")
-c.innerHTML=""
-
-data.runs.forEach(run=>{
-
-const row = document.createElement("div")
-row.className="row clickable"
-
-row.innerHTML =
-"<span>"+run.range+"</span>"+
-"<span>"+run.trio_gold_hour.toLocaleString()+"/h</span>"
-
-row.onclick = ()=>toggleTS(row,run)
-
-c.appendChild(row)
-
-})
-
-}
-
-
-
-async function loadGrinding(){
-
-const r=await fetch("./grinding_spots.json?"+Date.now())
-const data=await r.json()
-
-const c=document.getElementById("grindContainer")
-c.innerHTML=""
-
-data.spots.forEach(s=>{
-
-const row=document.createElement("div")
-row.className="row"
-
-row.innerHTML=
-"<span>"+s.name+"</span>"+
-"<span>"+s.profit_per_hour.toLocaleString()+"/h</span>"
-
-c.appendChild(row)
-
-})
-
-}
-
-
+/* Load all */
 
 function loadAll(){
 loadFishing()
-loadTS()
-loadGrinding()
 }
 
 loadAll()
-
 setInterval(loadAll,30000)
 
 </script>
+
 
 </body>
 </html>
