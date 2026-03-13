@@ -298,7 +298,7 @@ details.className="details"
 const title = document.createElement("div")
 title.style.fontWeight="bold"
 title.style.margin="10px 0"
-title.innerText = "TS "+run.range
+title.innerText = "TS "+run.range+" ("+run.time_minutes+" min)"
 details.appendChild(title)
 
 recipes[run.range].forEach(m=>{
