@@ -1,106 +1,46 @@
 {
   "zones":[
     {
-      "zone":"50-50",
-      "average_gold":25200,
+      "zone":"1-50",
+      "average_gold":11300,
       "fish":[
-        {"name":"Red Lava Horseshoe Crab","chance":"8%","value":11700},
-        {"name":"Lava Tyrant","chance":"5%","value":4000},
-        {"name":"Lava Snapper","chance":"7%","value":2350},
-        {"name":"Piquant Bunfish","chance":"6%","value":1674},
-        {"name":"Flame Stingray","chance":"10%","value":920}
-      ]
-    },
-
-    {
-      "zone":"45-50",
-      "average_gold":16500,
-      "fish":[
-        {"name":"Silver Piranha","chance":"18%","value":3740},
-        {"name":"Green Piranha","chance":"12%","value":2400},
-        {"name":"Terrapin","chance":"9%","value":1750},
-        {"name":"River Guardian","chance":"5%","value":1800},
-        {"name":"Ultramarine Terrapin","chance":"2%","value":880}
-      ]
-    },
-
-    {
-      "zone":"40-50",
-      "average_gold":14800,
-      "fish":[
-        {"name":"Frogfish","chance":"8%","value":5600},
-        {"name":"Black Alligator","chance":"6%","value":4000},
-        {"name":"Silver Piranha","chance":"15%","value":2040},
-        {"name":"Giant Goby","chance":"10%","value":1650},
-        {"name":"Electric Ray","chance":"5%","value":1500}
-      ]
-    },
-
-    {
-      "zone":"35-50",
-      "average_gold":13800,
-      "fish":[
-        {"name":"Sockeye Salmon","chance":"10%","value":4000},
-        {"name":"Silver Piranha","chance":"20%","value":3840},
-        {"name":"Green Piranha","chance":"10%","value":1600},
-        {"name":"Blue Piranha","chance":"10%","value":1600},
-        {"name":"River Catfish","chance":"12%","value":1200}
-      ]
-    },
-
-    {
-      "zone":"30-50",
-      "average_gold":15500,
-      "fish":[
-        {"name":"Tropical Pollock","chance":"8%","value":12000},
-        {"name":"Sea Fossil","chance":"4%","value":1200},
-        {"name":"Tuna","chance":"10%","value":800},
-        {"name":"Octopus","chance":"7%","value":400},
-        {"name":"Coral Fish","chance":"9%","value":1100}
+        {
+          "name":"Giant Catfish",
+          "chance":"1.2%",
+          "value":35000,
+          "icon":"FishPng/giant_catfish.png"
+        },
+        {
+          "name":"Silver Piranha",
+          "chance":"48.8%",
+          "value":20000,
+          "icon":"FishPng/silver_piranha.png"
+        },
+        {
+          "name":"Bespectacled Carp",
+          "chance":"20%",
+          "value":12000,
+          "icon":"FishPng/bespectacled_carp.png"
+        },
+        {
+          "name":"Chubby Carp",
+          "chance":"20%",
+          "value":9000,
+          "icon":"FishPng/chubby_carp.png"
+        },
+        {
+          "name":"Catfish",
+          "chance":"10%",
+          "value":8000,
+          "icon":"FishPng/catfish.png"
+        }
       ]
     }
-
-    {
-      "zone": "1-50",
-      "average_gold": 11300,
-      "fish": [
-    {
-      "name": "Giant Catfish",
-      "chance": "1.2%",
-      "value": 35000,
-      "icon": "FishPng/giant_catfish.png"
-    },
-    {
-      "name": "Silver Piranha",
-      "chance": "48.8%",
-      "value": 20000,
-      "icon": "FishPng/silver_piranha.png"
-    },
-    {
-      "name": "Bespectacled Carp",
-      "chance": "20%",
-      "value": 12000,
-      "icon": "FishPng/bespectacled_carp.png"
-    },
-    {
-      "name": "Chubby Carp",
-      "chance": "20%",
-      "value": 9000,
-      "icon": "FishPng/chubby_carp.png"
-    },
-    {
-      "name": "Catfish",
-      "chance": "10%",
-      "value": 8000,
-      "icon": "FishPng/catfish.png"
-    }
-  ]
-}
   ],
 
   "best_zone":{
-    "zone":"50-50",
-    "average_gold":25200
+    "zone":"1-50",
+    "average_gold":11300
   },
 
   "updated":1710330000
