@@ -3,36 +3,36 @@
     {
       "range": "35-99",
       "time_minutes": 5,
-      "cost": 44996,
+      "cost": 46616,
       "solo_profit": 169740,
-      "solo_net_profit": 124744,
-      "solo_gold_hour": 1496928,
+      "solo_net_profit": 123124,
+      "solo_gold_hour": 1477488,
       "trio_profit": 509220,
-      "trio_net_profit": 464224,
-      "trio_gold_hour": 5570688
+      "trio_net_profit": 462604,
+      "trio_gold_hour": 5551248
     },
     {
       "range": "45-99",
       "time_minutes": 13,
-      "cost": 144497,
+      "cost": 146657,
       "solo_profit": 254610,
-      "solo_net_profit": 110113,
-      "solo_gold_hour": 508213,
+      "solo_net_profit": 107953,
+      "solo_gold_hour": 498244,
       "trio_profit": 763830,
-      "trio_net_profit": 619333,
-      "trio_gold_hour": 2858459
+      "trio_net_profit": 617173,
+      "trio_gold_hour": 2848490
     },
     {
       "range": "50-99",
       "time_minutes": 6,
-      "cost": 217495,
+      "cost": 220285,
       "solo_profit": 254610,
-      "solo_net_profit": 37115,
-      "solo_gold_hour": 371150,
+      "solo_net_profit": 34325,
+      "solo_gold_hour": 343250,
       "trio_profit": 763830,
-      "trio_net_profit": 546335,
-      "trio_gold_hour": 5463350
+      "trio_net_profit": 543545,
+      "trio_gold_hour": 5435450
     }
   ],
-  "updated": 1773420563
+  "updated": 1773421551
 }
