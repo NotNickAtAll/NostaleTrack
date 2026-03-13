@@ -2,6 +2,7 @@
   "runs": [
     {
       "range": "35-99",
+      "time_minutes": 3,
       "cost": 44996,
       "solo_profit": 169740,
       "solo_net_profit": 124744,
@@ -12,6 +13,7 @@
     },
     {
       "range": "45-99",
+      "time_minutes": 13,
       "cost": 144497,
       "solo_profit": 254610,
       "solo_net_profit": 110113,
@@ -22,6 +24,7 @@
     },
     {
       "range": "50-99",
+      "time_minutes": 5,
       "cost": 217495,
       "solo_profit": 254610,
       "solo_net_profit": 37115,
