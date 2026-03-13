@@ -23,11 +23,17 @@
     }
   ],
 
-  "best_zone":{
+{
+  "best_npc_zone":{
     "zone":"1-50",
-    "npc_average_gold":11300,
-    "bazaar_average_gold":15800
+    "npc_average_gold":11300
   },
+
+  "best_bazaar_zone":{
+    "zone":"10-50",
+    "bazaar_average_gold":15500
+  }
+},
 
   "updated":1710330000
 }
