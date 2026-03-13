@@ -5,7 +5,7 @@
 
 <title>The Nostale Helper</title>
 
-<link rel="icon" href="favicon.png?v=8">
+<link rel="icon" href="favicon.png?v=9">
 
 <style>
 
@@ -91,10 +91,11 @@ gap:8px;
 width:28px;
 height:28px;
 image-rendering:pixelated;
+}
 
 .fishPrices{
 display:flex;
-gap:8px;
+gap:10px;
 font-size:14px;
 }
 
@@ -104,7 +105,6 @@ color:#cfcfcf;
 
 .bazaar{
 color:#7CFF8A;
-}
 }
 
 </style>
@@ -191,6 +191,7 @@ return Math.floor(h/24)+" days ago"
 }
 
 
+
 async function loadFishing(){
 
 const r=await fetch("./fish_prices.json?"+Date.now())
@@ -199,25 +200,25 @@ const data=await r.json()
 const best=data.best_zone
 
 document.getElementById("bestZone").innerHTML =
-"🔥 " + best.zone + " → " +
-"<span class='npc'>🪙 " + best.npc_average_gold.toLocaleString() + " NPC</span> / " +
-"<span class='bazaar'>🏪 " + best.bazaar_average_gold.toLocaleString() + " Bazaar</span> gold / catch";
+"🔥 "+best.zone+" → "+
+"🪙 "+best.npc_average_gold.toLocaleString()+" NPC / "+
+"🏪 "+best.bazaar_average_gold.toLocaleString()+" Bazaar gold / catch"
 
 const container=document.getElementById("zoneContainer")
 
 container.innerHTML=""
 
 data.zones
-.sort((a,b)=>b.average_gold-a.average_gold)
+.sort((a,b)=>b.npc_average_gold-a.npc_average_gold)
 .forEach(zone=>{
 
 const row=document.createElement("div")
 
 row.className="row clickable"
 
-row.innerHTML=
+row.innerHTML =
 "<span>"+zone.zone+"</span>"+
-"<span>"+zone.average_gold.toLocaleString()+"</span>"
+"<span>🪙 "+zone.npc_average_gold.toLocaleString()+"</span>"
 
 row.onclick=()=>toggleFish(row,zone)
 
@@ -225,10 +226,11 @@ container.appendChild(row)
 
 })
 
-document.getElementById("updatedTime").innerText=
+document.getElementById("updatedTime").innerText =
 "Fishing updated "+timeAgo(data.updated)
 
 }
+
 
 
 function toggleFish(row,zone){
@@ -260,12 +262,12 @@ r.className="row"
 r.innerHTML =
 "<span class='fishName'>" +
 "<img src='"+f.icon+"' class='fishIcon'>" +
-f.name + " (" + f.chance + ")" +
-"</span>" +
+f.name+" ("+f.chance+")"+
+"</span>"+
 "<span class='fishPrices'>" +
-"<span class='npc'>🪙 " + f.npc_value.toLocaleString() + "</span> / " +
-"<span class='bazaar'>🏪 " + f.bazaar_value.toLocaleString() + "</span>" +
-"</span>";
+"<span class='npc'>🪙 "+f.npc_value.toLocaleString()+"</span> / "+
+"<span class='bazaar'>🏪 "+f.bazaar_value.toLocaleString()+"</span>"+
+"</span>"
 
 details.appendChild(r)
 
@@ -305,6 +307,7 @@ c.appendChild(row)
 }
 
 
+
 async function loadGrinding(){
 
 const r=await fetch("./grinding_spots.json?"+Date.now())
@@ -329,6 +332,7 @@ c.appendChild(row)
 })
 
 }
+
 
 
 async function loadAll(){
