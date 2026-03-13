@@ -1,73 +1,15 @@
-
 <div class="lodBox">
 
 <div class="lodTitle">🔥 Land of Death</div>
+<div id="nextLod"></div>
 
-<div class="lodNext">🔥 LoD closed</div>
-
-
-<div class="lodRow">
-<span>00:00</span>
-<span>-</span>
-<span>02:00</span>
-<span>CH 7</span>
-</div>
-
-<div class="lodRow">
-<span>03:00</span>
-<span>-</span>
-<span>05:00</span>
-<span>CH 1</span>
-</div>
-
-<div class="lodRow">
-<span>06:00</span>
-<span>-</span>
-<span>08:00</span>
-<span>CH 1</span>
-</div>
-
-<div class="lodRow">
-<span>09:00</span>
-<span>-</span>
-<span>11:00</span>
-<span>CH 2</span>
-</div>
-
-<div class="lodRow">
-<span>12:00</span>
-<span>-</span>
-<span>14:00</span>
-<span>CH 3</span>
-</div>
-
-<div class="lodRow">
-<span>15:00</span>
-<span>-</span>
-<span>17:00</span>
-<span>CH 2,3,6</span>
-</div>
-
-<div class="lodRow">
-<span>18:00</span>
-<span>-</span>
-<span>20:00</span>
-<span>CH 4,5,7</span>
-</div>
-
-<div class="lodRow">
-<span>21:00</span>
-<span>-</span>
-<span>23:00</span>
-<span>CH 4,5,6</span>
-</div>
-
+<div id="lodRows"></div>
 
 </div>
 
 <style>
 
-.lodBox {
+.lodBox{
 background:#1f1f1f;
 padding:12px;
 border-radius:12px;
@@ -77,26 +19,148 @@ margin-bottom:20px;
 font-size:13px;
 }
 
-.lodTitle {
+.lodTitle{
 font-size:18px;
 font-weight:bold;
 margin-bottom:8px;
 }
 
-.lodNext {
+#nextLod{
 color:#ffcc66;
 margin-bottom:8px;
 }
 
-.lodRow {
+.lodRow{
 display:flex;
 justify-content:space-between;
 padding:4px 0;
 border-bottom:1px solid #333;
 }
 
-.lodRow:last-child {
+.lodRow:last-child{
 border-bottom:none;
 }
 
+.active{
+color:#7CFF8A;
+}
+
 </style>
+
+<script>
+
+const lodSchedule=[
+{start:0,end:2,ch:"7"},
+{start:3,end:5,ch:"1"},
+{start:6,end:8,ch:"1"},
+{start:9,end:11,ch:"2"},
+{start:12,end:14,ch:"3"},
+{start:15,end:17,ch:"2,3,6"},
+{start:18,end:20,ch:"4,5,7"},
+{start:21,end:23,ch:"4,5,6"}
+]
+
+const container=document.getElementById("lodRows")
+
+const lodTimes=[]
+
+lodSchedule.forEach(slot=>{
+
+const now=new Date()
+
+const start=new Date()
+start.setHours(slot.start,0,0,0)
+
+const end=new Date()
+end.setHours(slot.end,0,0,0)
+
+lodTimes.push({start,end,ch:slot.ch})
+
+const row=document.createElement("div")
+row.className="lodRow"
+
+row.innerHTML=`
+<span class="time"></span>
+<span>CH ${slot.ch}</span>
+<span class="count"></span>
+`
+
+container.appendChild(row)
+
+slot.element=row
+
+})
+
+function formatTime(date){
+return date.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})
+}
+
+function updateLOD(){
+
+const now=new Date()
+
+let nextDiff=null
+let nextChannels=""
+
+lodTimes.forEach(slot=>{
+
+const row=slot.element
+const time=row.querySelector(".time")
+const count=row.querySelector(".count")
+
+time.innerText=
+formatTime(slot.start)+" - "+formatTime(slot.end)
+
+const diff=(slot.start-now)/1000
+
+if(now>=slot.start && now<=slot.end){
+
+count.innerText="OPEN"
+row.classList.add("active")
+
+}else{
+
+row.classList.remove("active")
+
+if(diff>0){
+
+const m=Math.floor(diff/60)
+const s=Math.floor(diff%60)
+
+count.innerText=m+"m "+s+"s"
+
+if(nextDiff===null){
+nextDiff=diff
+nextChannels=slot.ch
+}
+
+}else{
+
+count.innerText="-"
+
+}
+
+}
+
+})
+
+if(nextDiff!==null){
+
+const m=Math.floor(nextDiff/60)
+const s=Math.floor(nextDiff%60)
+
+document.getElementById("nextLod").innerText=
+"🔥 Next LoD in "+m+"m "+s+"s (CH "+nextChannels+")"
+
+}else{
+
+document.getElementById("nextLod").innerText="🔥 LoD closed"
+
+}
+
+}
+
+updateLOD()
+setInterval(updateLOD,1000)
+
+</script>
