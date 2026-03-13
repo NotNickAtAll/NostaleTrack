@@ -1,103 +1,895 @@
 {
-"zones": [
-{
-"zone": "1-50",
-"npc_average_gold": 1395,
-"bazaar_average_gold": 17437,
-"fish": [
-{"name":"Giant Catfish","chance":"1.2%","npc_value":35000,"bazaar_value":398000,"icon":"FishPng/giant_catfish.png"},
-{"name":"Silver Piranha","chance":"48.8%","npc_value":750,"bazaar_value":21998,"icon":"FishPng/silver_piranha.png"},
-{"name":"Bespectacled Carp","chance":"20%","npc_value":860,"bazaar_value":1265,"icon":"FishPng/bespectacled_carp.png"},
-{"name":"Chubby Carp","chance":"20%","npc_value":860,"bazaar_value":863,"icon":"FishPng/chubby_carp.png"},
-{"name":"Catfish","chance":"10%","npc_value":2650,"bazaar_value":14999,"icon":"FishPng/catfish.png"}
-]
-},
-{
-"zone": "5-50",
-"npc_average_gold": 1534,
-"bazaar_average_gold": 37931,
-"fish": [
-{"name":"Chocolate Shark","chance":"0.8%","npc_value":55000,"bazaar_value":94900,"icon":"FishPng/chocolate_shark.png"},
-{"name":"Red Starfish","chance":"49.2%","npc_value":800,"bazaar_value":799,"icon":"FishPng/red_starfish.png"},
-{"name":"Blowfish","chance":"20%","npc_value":900,"bazaar_value":899,"icon":"FishPng/blowfish.png"},
-{"name":"Tipsy Pollock","chance":"20%","npc_value":900,"bazaar_value":915,"icon":"FishPng/tipsy_pollock.png"},
-{"name":"Red Pollock","chance":"10%","npc_value":3400,"bazaar_value":364999,"icon":"FishPng/red_pollock.png"}
-]
-},
-{
-"zone": "10-50",
-"npc_average_gold": 1669,
-"bazaar_average_gold": 21886,
-"fish": [
-{"name":"Arowana","chance":"0.8%","npc_value":60000,"bazaar_value":63197,"icon":"FishPng/arowana.png"},
-{"name":"Silver Piranha","chance":"40.2%","npc_value":750,"bazaar_value":21998,"icon":"FishPng/silver_piranha.png"},
-{"name":"Bespectacled Carp","chance":"13%","npc_value":860,"bazaar_value":1265,"icon":"FishPng/bespectacled_carp.png"},
-{"name":"Green Sunfish","chance":"12%","npc_value":900,"bazaar_value":887,"icon":"FishPng/green_sunfish.png"},
-{"name":"Red Bespectacled Carp","chance":"12%","npc_value":950,"bazaar_value":945,"icon":"FishPng/red_bespectacled_carp.png"},
-{"name":"Chubby Carp","chance":"12%","npc_value":860,"bazaar_value":863,"icon":"FishPng/chubby_carp.png"},
-{"name":"Salmon","chance":"10%","npc_value":4500,"bazaar_value":71998,"icon":"FishPng/salmon.png"}
-]
-},
-{
-"zone": "15-50",
-"npc_average_gold": 1901,
-"bazaar_average_gold": 6404,
-"fish": [
-{"name":"Megalodon","chance":"0.8%","npc_value":70000,"bazaar_value":70000,"icon":"FishPng/megalodon.png"},
-{"name":"Red Starfish","chance":"40.2%","npc_value":800,"bazaar_value":799,"icon":"FishPng/red_starfish.png"},
-{"name":"Blowfish","chance":"13%","npc_value":900,"bazaar_value":899,"icon":"FishPng/blowfish.png"},
-{"name":"Red Blowfish","chance":"12%","npc_value":1200,"bazaar_value":1200,"icon":"FishPng/red_blowfish.png"},
-{"name":"Blue Starfish","chance":"12%","npc_value":950,"bazaar_value":950,"icon":"FishPng/blue_starfish.png"},
-{"name":"Red Batstar","chance":"12%","npc_value":1200,"bazaar_value":1248,"icon":"FishPng/red_batstar.png"},
-{"name":"Deep-Sea Pollock","chance":"10%","npc_value":5000,"bazaar_value":49999,"icon":"FishPng/deep_sea_pollock.png"}
-]
-},
-{
-"zone": "20-50",
-"npc_average_gold": 2069,
-"bazaar_average_gold": 8381,
-"fish": [
-{"name":"Frigus","chance":"0.4%","npc_value":80000,"bazaar_value":670000,"icon":"FishPng/frigus.png"},
-{"name":"Blue Coelacanth","chance":"0.4%","npc_value":80000,"bazaar_value":280000,"icon":"FishPng/blue_coelacanth.png"},
-{"name":"Red Starfish","chance":"35.2%","npc_value":800,"bazaar_value":799,"icon":"FishPng/red_starfish.png"},
-{"name":"Blowfish","chance":"10%","npc_value":900,"bazaar_value":899,"icon":"FishPng/blowfish.png"},
-{"name":"Blue Starfish","chance":"10%","npc_value":950,"bazaar_value":950,"icon":"FishPng/blue_starfish.png"},
-{"name":"Red Blowfish","chance":"9%","npc_value":1200,"bazaar_value":1200,"icon":"FishPng/red_blowfish.png"},
-{"name":"Red Batstar","chance":"9%","npc_value":1200,"bazaar_value":1248,"icon":"FishPng/red_batstar.png"},
-{"name":"Blue Batstar","chance":"8%","npc_value":1300,"bazaar_value":1347,"icon":"FishPng/blue_batstar.png"},
-{"name":"Squid","chance":"8%","npc_value":1400,"bazaar_value":1487,"icon":"FishPng/squid.png"},
-{"name":"Rugged Sea Turtle","chance":"5%","npc_value":5300,"bazaar_value":28999,"icon":"FishPng/rugged_sea_turtle.png"},
-{"name":"Violet Sea Turtle","chance":"5%","npc_value":5300,"bazaar_value":9900,"icon":"FishPng/violet_sea_turtle.png"}
-]
-},
-{
-"zone": "25-50",
-"npc_average_gold": 2218,
-"bazaar_average_gold": 10266,
-"fish": [
-{"name":"River Tyrant","chance":"0.4%","npc_value":170000,"bazaar_value":334997,"icon":"FishPng/river_tyrant.png"},
-{"name":"Silver Piranha","chance":"30.6%","npc_value":750,"bazaar_value":21998,"icon":"FishPng/silver_piranha.png"},
-{"name":"Chubby Carp","chance":"10%","npc_value":860,"bazaar_value":863,"icon":"FishPng/chubby_carp.png"},
-{"name":"Really Chubby Carp","chance":"10%","npc_value":1100,"bazaar_value":1100,"icon":"FishPng/really_chubby_carp.png"},
-{"name":"River Guppy","chance":"10%","npc_value":2800,"bazaar_value":2945,"icon":"FishPng/river_guppy.png"},
-{"name":"Red Sunfish","chance":"10%","npc_value":950,"bazaar_value":996,"icon":"FishPng/red_sunfish.png"},
-{"name":"Snakehead","chance":"8%","npc_value":1500,"bazaar_value":1496,"icon":"FishPng/snakehead.png"},
-{"name":"Green Sunfish","chance":"8%","npc_value":900,"bazaar_value":887,"icon":"FishPng/green_sunfish.png"},
-{"name":"River Goby","chance":"6%","npc_value":6000,"bazaar_value":11896,"icon":"FishPng/river_goby.png"},
-{"name":"Catfish","chance":"7%","npc_value":2650,"bazaar_value":14999,"icon":"FishPng/catfish.png"}
-]
-}
-],
-
-"best_npc_zone": {
-"zone": "50-50",
-"npc_average_gold": 6064
-},
-
-"best_bazaar_zone": {
-"zone": "5-50",
-"bazaar_average_gold": 37931
-},
-
-"updated": 1710330000
+    "zones": [
+        {
+            "zone": "1-50",
+            "npc_average_gold": 1395,
+            "bazaar_average_gold": 54807,
+            "fish": [
+                {
+                    "name": "Giant Catfish",
+                    "chance": "1.2%",
+                    "npc_value": 35000,
+                    "bazaar_value": 2799999,
+                    "icon": "FishPng/giant_catfish.png"
+                },
+                {
+                    "name": "Silver Piranha",
+                    "chance": "48.8%",
+                    "npc_value": 750,
+                    "bazaar_value": 21998,
+                    "icon": "FishPng/silver_piranha.png"
+                },
+                {
+                    "name": "Bespectacled Carp",
+                    "chance": "20%",
+                    "npc_value": 860,
+                    "bazaar_value": 1500,
+                    "icon": "FishPng/bespectacled_carp.png"
+                },
+                {
+                    "name": "Chubby Carp",
+                    "chance": "20%",
+                    "npc_value": 860,
+                    "bazaar_value": 863,
+                    "icon": "FishPng/chubby_carp.png"
+                },
+                {
+                    "name": "Catfish",
+                    "chance": "10%",
+                    "npc_value": 2650,
+                    "bazaar_value": 100000,
+                    "icon": "FishPng/catfish.png"
+                }
+            ]
+        },
+        {
+            "zone": "5-50",
+            "npc_average_gold": 1534,
+            "bazaar_average_gold": 5978,
+            "fish": [
+                {
+                    "name": "Chocolate Shark",
+                    "chance": "0.8%",
+                    "npc_value": 55000,
+                    "bazaar_value": 299000,
+                    "icon": "FishPng/chocolate_shark.png"
+                },
+                {
+                    "name": "Red Starfish",
+                    "chance": "49.2%",
+                    "npc_value": 800,
+                    "bazaar_value": 799,
+                    "icon": "FishPng/red_starfish.png"
+                },
+                {
+                    "name": "Blowfish",
+                    "chance": "20%",
+                    "npc_value": 900,
+                    "bazaar_value": 1300,
+                    "icon": "FishPng/blowfish.png"
+                },
+                {
+                    "name": "Tipsy Pollock",
+                    "chance": "20%",
+                    "npc_value": 900,
+                    "bazaar_value": 915,
+                    "icon": "FishPng/tipsy_pollock.png"
+                },
+                {
+                    "name": "Red Pollock",
+                    "chance": "10%",
+                    "npc_value": 3400,
+                    "bazaar_value": 27500,
+                    "icon": "FishPng/red_pollock.png"
+                }
+            ]
+        },
+        {
+            "zone": "10-50",
+            "npc_average_gold": 1669,
+            "bazaar_average_gold": 12367,
+            "fish": [
+                {
+                    "name": "Arowana",
+                    "chance": "0.8%",
+                    "npc_value": 60000,
+                    "bazaar_value": 63197,
+                    "icon": "FishPng/arowana.png"
+                },
+                {
+                    "name": "Silver Piranha",
+                    "chance": "40.2%",
+                    "npc_value": 750,
+                    "bazaar_value": 21998,
+                    "icon": "FishPng/silver_piranha.png"
+                },
+                {
+                    "name": "Bespectacled Carp",
+                    "chance": "13%",
+                    "npc_value": 860,
+                    "bazaar_value": 1500,
+                    "icon": "FishPng/bespectacled_carp.png"
+                },
+                {
+                    "name": "Green Sunfish",
+                    "chance": "12%",
+                    "npc_value": 900,
+                    "bazaar_value": 887,
+                    "icon": "FishPng/green_sunfish.png"
+                },
+                {
+                    "name": "Red Bespectacled Carp",
+                    "chance": "12%",
+                    "npc_value": 950,
+                    "bazaar_value": 945,
+                    "icon": "FishPng/red_bespectacled_carp.png"
+                },
+                {
+                    "name": "Chubby Carp",
+                    "chance": "12%",
+                    "npc_value": 860,
+                    "bazaar_value": 863,
+                    "icon": "FishPng/chubby_carp.png"
+                },
+                {
+                    "name": "Salmon",
+                    "chance": "10%",
+                    "npc_value": 4500,
+                    "bazaar_value": 24999,
+                    "icon": "FishPng/salmon.png"
+                }
+            ]
+        },
+        {
+            "zone": "15-50",
+            "npc_average_gold": 1901,
+            "bazaar_average_gold": 6457,
+            "fish": [
+                {
+                    "name": "Megalodon",
+                    "chance": "0.8%",
+                    "npc_value": 70000,
+                    "bazaar_value": 70000,
+                    "icon": "FishPng/megalodon.png"
+                },
+                {
+                    "name": "Red Starfish",
+                    "chance": "40.2%",
+                    "npc_value": 800,
+                    "bazaar_value": 799,
+                    "icon": "FishPng/red_starfish.png"
+                },
+                {
+                    "name": "Blowfish",
+                    "chance": "13%",
+                    "npc_value": 900,
+                    "bazaar_value": 1300,
+                    "icon": "FishPng/blowfish.png"
+                },
+                {
+                    "name": "Red Blowfish",
+                    "chance": "12%",
+                    "npc_value": 1200,
+                    "bazaar_value": 1200,
+                    "icon": "FishPng/red_blowfish.png"
+                },
+                {
+                    "name": "Blue Starfish",
+                    "chance": "12%",
+                    "npc_value": 950,
+                    "bazaar_value": 950,
+                    "icon": "FishPng/blue_starfish.png"
+                },
+                {
+                    "name": "Red Batstar",
+                    "chance": "12%",
+                    "npc_value": 1200,
+                    "bazaar_value": 1248,
+                    "icon": "FishPng/red_batstar.png"
+                },
+                {
+                    "name": "Deep-Sea Pollock",
+                    "chance": "10%",
+                    "npc_value": 5000,
+                    "bazaar_value": 49999,
+                    "icon": "FishPng/deep_sea_pollock.png"
+                }
+            ]
+        },
+        {
+            "zone": "20-50",
+            "npc_average_gold": 2069,
+            "bazaar_average_gold": 5018,
+            "fish": [
+                {
+                    "name": "Frigus",
+                    "chance": "0.4%",
+                    "npc_value": 80000,
+                    "bazaar_value": 249999,
+                    "icon": "FishPng/frigus.png"
+                },
+                {
+                    "name": "Blue Coelacanth",
+                    "chance": "0.4%",
+                    "npc_value": 80000,
+                    "bazaar_value": 280000,
+                    "icon": "FishPng/blue_coelacanth.png"
+                },
+                {
+                    "name": "Red Starfish",
+                    "chance": "35.2%",
+                    "npc_value": 800,
+                    "bazaar_value": 799,
+                    "icon": "FishPng/red_starfish.png"
+                },
+                {
+                    "name": "Blowfish",
+                    "chance": "10%",
+                    "npc_value": 900,
+                    "bazaar_value": 1300,
+                    "icon": "FishPng/blowfish.png"
+                },
+                {
+                    "name": "Blue Starfish",
+                    "chance": "10%",
+                    "npc_value": 950,
+                    "bazaar_value": 950,
+                    "icon": "FishPng/blue_starfish.png"
+                },
+                {
+                    "name": "Red Blowfish",
+                    "chance": "9%",
+                    "npc_value": 1200,
+                    "bazaar_value": 1200,
+                    "icon": "FishPng/red_blowfish.png"
+                },
+                {
+                    "name": "Red Batstar",
+                    "chance": "9%",
+                    "npc_value": 1200,
+                    "bazaar_value": 1248,
+                    "icon": "FishPng/red_batstar.png"
+                },
+                {
+                    "name": "Blue Batstar",
+                    "chance": "8%",
+                    "npc_value": 1300,
+                    "bazaar_value": 1347,
+                    "icon": "FishPng/blue_batstar.png"
+                },
+                {
+                    "name": "Squid",
+                    "chance": "8%",
+                    "npc_value": 1400,
+                    "bazaar_value": 1487,
+                    "icon": "FishPng/squid.png"
+                },
+                {
+                    "name": "Rugged Sea Turtle",
+                    "chance": "5%",
+                    "npc_value": 5300,
+                    "bazaar_value": 28999,
+                    "icon": "FishPng/rugged_sea_turtle.png"
+                },
+                {
+                    "name": "Violet Sea Turtle",
+                    "chance": "5%",
+                    "npc_value": 5300,
+                    "bazaar_value": 9900,
+                    "icon": "FishPng/violet_sea_turtle.png"
+                }
+            ]
+        },
+        {
+            "zone": "25-50",
+            "npc_average_gold": 2218,
+            "bazaar_average_gold": 16566,
+            "fish": [
+                {
+                    "name": "River Tyrant",
+                    "chance": "0.4%",
+                    "npc_value": 170000,
+                    "bazaar_value": 334997,
+                    "icon": "FishPng/river_tyrant.png"
+                },
+                {
+                    "name": "Silver Piranha",
+                    "chance": "30.6%",
+                    "npc_value": 750,
+                    "bazaar_value": 21998,
+                    "icon": "FishPng/silver_piranha.png"
+                },
+                {
+                    "name": "Chubby Carp",
+                    "chance": "10%",
+                    "npc_value": 860,
+                    "bazaar_value": 863,
+                    "icon": "FishPng/chubby_carp.png"
+                },
+                {
+                    "name": "Really Chubby Carp",
+                    "chance": "10%",
+                    "npc_value": 1100,
+                    "bazaar_value": 1100,
+                    "icon": "FishPng/really_chubby_carp.png"
+                },
+                {
+                    "name": "River Guppy",
+                    "chance": "10%",
+                    "npc_value": 2800,
+                    "bazaar_value": 2945,
+                    "icon": "FishPng/river_guppy.png"
+                },
+                {
+                    "name": "Red Sunfish",
+                    "chance": "10%",
+                    "npc_value": 950,
+                    "bazaar_value": 996,
+                    "icon": "FishPng/red_sunfish.png"
+                },
+                {
+                    "name": "Snakehead",
+                    "chance": "8%",
+                    "npc_value": 1500,
+                    "bazaar_value": 1496,
+                    "icon": "FishPng/snakehead.png"
+                },
+                {
+                    "name": "Green Sunfish",
+                    "chance": "8%",
+                    "npc_value": 900,
+                    "bazaar_value": 887,
+                    "icon": "FishPng/green_sunfish.png"
+                },
+                {
+                    "name": "River Goby",
+                    "chance": "6%",
+                    "npc_value": 6000,
+                    "bazaar_value": 11896,
+                    "icon": "FishPng/river_goby.png"
+                },
+                {
+                    "name": "Catfish",
+                    "chance": "7%",
+                    "npc_value": 2650,
+                    "bazaar_value": 100000,
+                    "icon": "FishPng/catfish.png"
+                }
+            ]
+        },
+        {
+            "zone": "30-50",
+            "npc_average_gold": 2873,
+            "bazaar_average_gold": 29923,
+            "fish": [
+                {
+                    "name": "Octopus",
+                    "chance": "0.4%",
+                    "npc_value": 100000,
+                    "bazaar_value": 1000000,
+                    "icon": "FishPng/octopus.png"
+                },
+                {
+                    "name": "Sea Fossil",
+                    "chance": "0.4%",
+                    "npc_value": 100000,
+                    "bazaar_value": 289999,
+                    "icon": "FishPng/sea_fossil.png"
+                },
+                {
+                    "name": "Red Starfish",
+                    "chance": "30.2%",
+                    "npc_value": 800,
+                    "bazaar_value": 799,
+                    "icon": "FishPng/red_starfish.png"
+                },
+                {
+                    "name": "Squid",
+                    "chance": "10%",
+                    "npc_value": 1400,
+                    "bazaar_value": 1487,
+                    "icon": "FishPng/squid.png"
+                },
+                {
+                    "name": "Porky Pollock",
+                    "chance": "15%",
+                    "npc_value": 900,
+                    "bazaar_value": 110000,
+                    "icon": "FishPng/porky_pollock.png"
+                },
+                {
+                    "name": "Blue Batstar",
+                    "chance": "10%",
+                    "npc_value": 1300,
+                    "bazaar_value": 1347,
+                    "icon": "FishPng/blue_batstar.png"
+                },
+                {
+                    "name": "Molly",
+                    "chance": "9%",
+                    "npc_value": 2900,
+                    "bazaar_value": 3899,
+                    "icon": "FishPng/molly.png"
+                },
+                {
+                    "name": "Fighting Fish",
+                    "chance": "9%",
+                    "npc_value": 2900,
+                    "bazaar_value": 2980,
+                    "icon": "FishPng/fighting_fish.png"
+                },
+                {
+                    "name": "Tuna",
+                    "chance": "8%",
+                    "npc_value": 5800,
+                    "bazaar_value": 9000,
+                    "icon": "FishPng/tuna.png"
+                },
+                {
+                    "name": "Tropical Pollock",
+                    "chance": "8%",
+                    "npc_value": 5500,
+                    "bazaar_value": 80000,
+                    "icon": "FishPng/tropical_pollock.png"
+                }
+            ]
+        },
+        {
+            "zone": "35-50",
+            "npc_average_gold": 3438,
+            "bazaar_average_gold": 13440,
+            "fish": [
+                {
+                    "name": "Black Speckled Sturgeon",
+                    "chance": "0.4%",
+                    "npc_value": 135000,
+                    "bazaar_value": 136900,
+                    "icon": "FishPng/black_speckled_sturgeon.png"
+                },
+                {
+                    "name": "Armoured Sturgeon",
+                    "chance": "0.4%",
+                    "npc_value": 135000,
+                    "bazaar_value": 135999,
+                    "icon": "FishPng/armoured_sturgeon.png"
+                },
+                {
+                    "name": "Silver Piranha",
+                    "chance": "19.2%",
+                    "npc_value": 750,
+                    "bazaar_value": 21998,
+                    "icon": "FishPng/silver_piranha.png"
+                },
+                {
+                    "name": "Chubby Carp",
+                    "chance": "10%",
+                    "npc_value": 860,
+                    "bazaar_value": 863,
+                    "icon": "FishPng/chubby_carp.png"
+                },
+                {
+                    "name": "Blue Piranha",
+                    "chance": "8%",
+                    "npc_value": 900,
+                    "bazaar_value": 20998,
+                    "icon": "FishPng/blue_piranha.png"
+                },
+                {
+                    "name": "Green Piranha",
+                    "chance": "8%",
+                    "npc_value": 900,
+                    "bazaar_value": 20498,
+                    "icon": "FishPng/green_piranha.png"
+                },
+                {
+                    "name": "Green Sunfish",
+                    "chance": "7%",
+                    "npc_value": 900,
+                    "bazaar_value": 887,
+                    "icon": "FishPng/green_sunfish.png"
+                },
+                {
+                    "name": "Red Sunfish",
+                    "chance": "8%",
+                    "npc_value": 950,
+                    "bazaar_value": 996,
+                    "icon": "FishPng/red_sunfish.png"
+                },
+                {
+                    "name": "Snakehead",
+                    "chance": "6%",
+                    "npc_value": 1500,
+                    "bazaar_value": 1496,
+                    "icon": "FishPng/snakehead.png"
+                },
+                {
+                    "name": "Red Snakehead",
+                    "chance": "6%",
+                    "npc_value": 3500,
+                    "bazaar_value": 3494,
+                    "icon": "FishPng/red_snakehead.png"
+                },
+                {
+                    "name": "Suckermouth Catfish",
+                    "chance": "6%",
+                    "npc_value": 5000,
+                    "bazaar_value": 6296,
+                    "icon": "FishPng/suckermouth_catfish.png"
+                },
+                {
+                    "name": "Stick Fish",
+                    "chance": "6%",
+                    "npc_value": 4500,
+                    "bazaar_value": 40000,
+                    "icon": "FishPng/stick_fish.png"
+                },
+                {
+                    "name": "Sockeye Salmon",
+                    "chance": "5%",
+                    "npc_value": 6500,
+                    "bazaar_value": 14999,
+                    "icon": "FishPng/sockeye_salmon.png"
+                },
+                {
+                    "name": "Goby Minnow",
+                    "chance": "5%",
+                    "npc_value": 6500,
+                    "bazaar_value": 11999,
+                    "icon": "FishPng/goby_minnow.png"
+                },
+                {
+                    "name": "Eel",
+                    "chance": "5%",
+                    "npc_value": 6500,
+                    "bazaar_value": 3000,
+                    "icon": "FishPng/eel.png"
+                }
+            ]
+        },
+        {
+            "zone": "40-50",
+            "npc_average_gold": 3867,
+            "bazaar_average_gold": 13512,
+            "fish": [
+                {
+                    "name": "Black Alligator",
+                    "chance": "0.4%",
+                    "npc_value": 175000,
+                    "bazaar_value": 949999,
+                    "icon": "FishPng/black_alligator.png"
+                },
+                {
+                    "name": "Frogfish",
+                    "chance": "0.4%",
+                    "npc_value": 175000,
+                    "bazaar_value": 400000,
+                    "icon": "FishPng/frogfish.png"
+                },
+                {
+                    "name": "Silver Piranha",
+                    "chance": "10.2%",
+                    "npc_value": 750,
+                    "bazaar_value": 21998,
+                    "icon": "FishPng/silver_piranha.png"
+                },
+                {
+                    "name": "Green Sunfish",
+                    "chance": "10%",
+                    "npc_value": 900,
+                    "bazaar_value": 887,
+                    "icon": "FishPng/green_sunfish.png"
+                },
+                {
+                    "name": "Chubby Carp",
+                    "chance": "10%",
+                    "npc_value": 860,
+                    "bazaar_value": 863,
+                    "icon": "FishPng/chubby_carp.png"
+                },
+                {
+                    "name": "Really Chubby Carp",
+                    "chance": "9%",
+                    "npc_value": 1100,
+                    "bazaar_value": 1100,
+                    "icon": "FishPng/really_chubby_carp.png"
+                },
+                {
+                    "name": "Stick Fish",
+                    "chance": "6%",
+                    "npc_value": 4500,
+                    "bazaar_value": 40000,
+                    "icon": "FishPng/stick_fish.png"
+                },
+                {
+                    "name": "Red Sunfish",
+                    "chance": "10%",
+                    "npc_value": 950,
+                    "bazaar_value": 996,
+                    "icon": "FishPng/red_sunfish.png"
+                },
+                {
+                    "name": "Red Bespectacled Carp",
+                    "chance": "10%",
+                    "npc_value": 950,
+                    "bazaar_value": 945,
+                    "icon": "FishPng/red_bespectacled_carp.png"
+                },
+                {
+                    "name": "Red Snakehead",
+                    "chance": "8%",
+                    "npc_value": 3500,
+                    "bazaar_value": 3494,
+                    "icon": "FishPng/red_snakehead.png"
+                },
+                {
+                    "name": "Suckermouth Catfish",
+                    "chance": "6%",
+                    "npc_value": 5000,
+                    "bazaar_value": 6296,
+                    "icon": "FishPng/suckermouth_catfish.png"
+                },
+                {
+                    "name": "Silver Suckermouth Catfish",
+                    "chance": "5%",
+                    "npc_value": 5500,
+                    "bazaar_value": 10978,
+                    "icon": "FishPng/silver_suckermouth_catfish.png"
+                },
+                {
+                    "name": "Predatory Goby Minnow",
+                    "chance": "5%",
+                    "npc_value": 3518,
+                    "bazaar_value": 11999,
+                    "icon": "FishPng/predatory_goby_minnow.png"
+                },
+                {
+                    "name": "River Goby",
+                    "chance": "5%",
+                    "npc_value": 6000,
+                    "bazaar_value": 11896,
+                    "icon": "FishPng/river_goby.png"
+                },
+                {
+                    "name": "River Ray",
+                    "chance": "5%",
+                    "npc_value": 6500,
+                    "bazaar_value": 11996,
+                    "icon": "FishPng/river_ray.png"
+                }
+            ]
+        },
+        {
+            "zone": "45-50",
+            "npc_average_gold": 4953,
+            "bazaar_average_gold": 20842,
+            "fish": [
+                {
+                    "name": "Blessed Frogfish",
+                    "chance": "0.4%",
+                    "npc_value": 190000,
+                    "bazaar_value": 899999,
+                    "icon": "FishPng/blessed_frogfish.png"
+                },
+                {
+                    "name": "River Guardian",
+                    "chance": "0.4%",
+                    "npc_value": 190000,
+                    "bazaar_value": 189881,
+                    "icon": "FishPng/river_guardian.png"
+                },
+                {
+                    "name": "Silver Piranha",
+                    "chance": "18.7%",
+                    "npc_value": 750,
+                    "bazaar_value": 21998,
+                    "icon": "FishPng/silver_piranha.png"
+                },
+                {
+                    "name": "Green Piranha",
+                    "chance": "12%",
+                    "npc_value": 900,
+                    "bazaar_value": 20498,
+                    "icon": "FishPng/green_piranha.png"
+                },
+                {
+                    "name": "Blue Piranha",
+                    "chance": "12%",
+                    "npc_value": 900,
+                    "bazaar_value": 20998,
+                    "icon": "FishPng/blue_piranha.png"
+                },
+                {
+                    "name": "Red Snakehead",
+                    "chance": "10%",
+                    "npc_value": 3500,
+                    "bazaar_value": 3494,
+                    "icon": "FishPng/red_snakehead.png"
+                },
+                {
+                    "name": "Red Suckermouth Catfish",
+                    "chance": "6%",
+                    "npc_value": 6000,
+                    "bazaar_value": 6296,
+                    "icon": "FishPng/red_suckermouth_catfish.png"
+                },
+                {
+                    "name": "Green Catfish",
+                    "chance": "5%",
+                    "npc_value": 6500,
+                    "bazaar_value": 30998,
+                    "icon": "FishPng/green_catfish.png"
+                },
+                {
+                    "name": "Green River Goby",
+                    "chance": "5%",
+                    "npc_value": 6500,
+                    "bazaar_value": 44498,
+                    "icon": "FishPng/green_river_goby.png"
+                },
+                {
+                    "name": "River Guppy",
+                    "chance": "8%",
+                    "npc_value": 2800,
+                    "bazaar_value": 2945,
+                    "icon": "FishPng/river_guppy.png"
+                },
+                {
+                    "name": "Yellow Spotted River Ray",
+                    "chance": "3%",
+                    "npc_value": 7000,
+                    "bazaar_value": 19699,
+                    "icon": "FishPng/yellow_spotted_river_ray.png"
+                },
+                {
+                    "name": "Vampire Fish",
+                    "chance": "3%",
+                    "npc_value": 7000,
+                    "bazaar_value": 6999,
+                    "icon": "FishPng/vampire_fish.png"
+                },
+                {
+                    "name": "Leaffish",
+                    "chance": "6%",
+                    "npc_value": 6500,
+                    "bazaar_value": 6583,
+                    "icon": "FishPng/leaffish.png"
+                },
+                {
+                    "name": "Terrapin",
+                    "chance": "5%",
+                    "npc_value": 6500,
+                    "bazaar_value": 18000,
+                    "icon": "FishPng/terrapin.png"
+                },
+                {
+                    "name": "Ultramarine Armoured Terrapin",
+                    "chance": "5.5%",
+                    "npc_value": 6500,
+                    "bazaar_value": 10111,
+                    "icon": "FishPng/ultramarine_armoured_terrapin.png"
+                }
+            ]
+        },
+        {
+            "zone": "50-50",
+            "npc_average_gold": 6064,
+            "bazaar_average_gold": 71626,
+            "fish": [
+                {
+                    "name": "Flame Stingray",
+                    "chance": "0.4%",
+                    "npc_value": 170000,
+                    "bazaar_value": 294999,
+                    "icon": "FishPng/flame_stingray.png"
+                },
+                {
+                    "name": "Blue Flame Stingray",
+                    "chance": "0.4%",
+                    "npc_value": 170000,
+                    "bazaar_value": 308000,
+                    "icon": "FishPng/blue_flame_stingray.png"
+                },
+                {
+                    "name": "Lava Tyrant",
+                    "chance": "0.4%",
+                    "npc_value": 170000,
+                    "bazaar_value": 999998,
+                    "icon": "FishPng/lava_tyrant.png"
+                },
+                {
+                    "name": "Charred Bunfish",
+                    "chance": "9.3%",
+                    "npc_value": 700,
+                    "bazaar_value": 1879,
+                    "icon": "FishPng/charred_bunfish.png"
+                },
+                {
+                    "name": "Bunfish",
+                    "chance": "9.3%",
+                    "npc_value": 700,
+                    "bazaar_value": 389420,
+                    "icon": "FishPng/bunfish.png"
+                },
+                {
+                    "name": "Piquant Bunfish",
+                    "chance": "9.3%",
+                    "npc_value": 1000,
+                    "bazaar_value": 9997,
+                    "icon": "FishPng/piquant_bunfish.png"
+                },
+                {
+                    "name": "Lava Snapper",
+                    "chance": "9.4%",
+                    "npc_value": 1500,
+                    "bazaar_value": 170000,
+                    "icon": "FishPng/lava_snapper.png"
+                },
+                {
+                    "name": "Blue-Flame Snapper",
+                    "chance": "9%",
+                    "npc_value": 2000,
+                    "bazaar_value": 999,
+                    "icon": "FishPng/blue_flame_snapper.png"
+                },
+                {
+                    "name": "Black Lava Snapper",
+                    "chance": "9%",
+                    "npc_value": 3000,
+                    "bazaar_value": 8887,
+                    "icon": "FishPng/black_lava_snapper.png"
+                },
+                {
+                    "name": "Lava Shark",
+                    "chance": "9%",
+                    "npc_value": 7000,
+                    "bazaar_value": 6999,
+                    "icon": "FishPng/lava_shark.png"
+                },
+                {
+                    "name": "Blue Lava Shark",
+                    "chance": "7%",
+                    "npc_value": 8000,
+                    "bazaar_value": 17100,
+                    "icon": "FishPng/blue_lava_shark.png"
+                },
+                {
+                    "name": "Lava Horseshoe Crab",
+                    "chance": "9%",
+                    "npc_value": 7000,
+                    "bazaar_value": 7390,
+                    "icon": "FishPng/lava_horseshoe_crab.png"
+                },
+                {
+                    "name": "Red Lava Horseshoe Crab",
+                    "chance": "6.5%",
+                    "npc_value": 8000,
+                    "bazaar_value": 114000,
+                    "icon": "FishPng/red_lava_horseshoe_crab.png"
+                },
+                {
+                    "name": "Lava Sea Snail",
+                    "chance": "9%",
+                    "npc_value": 7000,
+                    "bazaar_value": 6998,
+                    "icon": "FishPng/lava_sea_snail.png"
+                },
+                {
+                    "name": "Red Lava Sea Snail",
+                    "chance": "3%",
+                    "npc_value": 8000,
+                    "bazaar_value": 16399,
+                    "icon": "FishPng/red_lava_sea_snail.png"
+                }
+            ]
+        }
+    ],
+    "best_npc_zone": {
+        "zone": "50-50",
+        "npc_average_gold": 6064
+    },
+    "best_bazaar_zone": {
+        "zone": "1-50",
+        "bazaar_average_gold": 0
+    },
+    "updated": 1710330000
 }
