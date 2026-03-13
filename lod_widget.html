@@ -1,122 +1,150 @@
 
 <div class="lodBox">
 
-<h2>🔥 Land of Death</h2>
+<div id="nextLod"></div>
 
+<div id="lodRows">
 
-<div class="lodRow">
-<span class="lodTime" data-unix="1773352800"></span>
--
-<span class="lodTime" data-unix="1773360000"></span>
-| CH 7
-| <span class="countdown" data-start="1773352800" data-end="1773360000"></span>
+<div class="lodRow" data-start="1773352800" data-end="1773360000" data-ch="7">
+<span class="start"></span>
+<span>-</span>
+<span class="end"></span>
+<span>CH 7</span>
+<span class="count"></span>
 </div>
 
 
-<div class="lodRow">
-<span class="lodTime" data-unix="1773363600"></span>
--
-<span class="lodTime" data-unix="1773370800"></span>
-| CH 1
-| <span class="countdown" data-start="1773363600" data-end="1773370800"></span>
+<div class="lodRow" data-start="1773363600" data-end="1773370800" data-ch="1">
+<span class="start"></span>
+<span>-</span>
+<span class="end"></span>
+<span>CH 1</span>
+<span class="count"></span>
 </div>
 
 
-<div class="lodRow">
-<span class="lodTime" data-unix="1773374400"></span>
--
-<span class="lodTime" data-unix="1773381600"></span>
-| CH 1
-| <span class="countdown" data-start="1773374400" data-end="1773381600"></span>
+<div class="lodRow" data-start="1773374400" data-end="1773381600" data-ch="1">
+<span class="start"></span>
+<span>-</span>
+<span class="end"></span>
+<span>CH 1</span>
+<span class="count"></span>
 </div>
 
 
-<div class="lodRow">
-<span class="lodTime" data-unix="1773385200"></span>
--
-<span class="lodTime" data-unix="1773392400"></span>
-| CH 2
-| <span class="countdown" data-start="1773385200" data-end="1773392400"></span>
+<div class="lodRow" data-start="1773385200" data-end="1773392400" data-ch="2">
+<span class="start"></span>
+<span>-</span>
+<span class="end"></span>
+<span>CH 2</span>
+<span class="count"></span>
 </div>
 
 
-<div class="lodRow">
-<span class="lodTime" data-unix="1773396000"></span>
--
-<span class="lodTime" data-unix="1773403200"></span>
-| CH 3
-| <span class="countdown" data-start="1773396000" data-end="1773403200"></span>
+<div class="lodRow" data-start="1773396000" data-end="1773403200" data-ch="3">
+<span class="start"></span>
+<span>-</span>
+<span class="end"></span>
+<span>CH 3</span>
+<span class="count"></span>
 </div>
 
 
-<div class="lodRow">
-<span class="lodTime" data-unix="1773406800"></span>
--
-<span class="lodTime" data-unix="1773414000"></span>
-| CH 2,3,6
-| <span class="countdown" data-start="1773406800" data-end="1773414000"></span>
+<div class="lodRow" data-start="1773406800" data-end="1773414000" data-ch="2,3,6">
+<span class="start"></span>
+<span>-</span>
+<span class="end"></span>
+<span>CH 2,3,6</span>
+<span class="count"></span>
 </div>
 
 
-<div class="lodRow">
-<span class="lodTime" data-unix="1773417600"></span>
--
-<span class="lodTime" data-unix="1773424800"></span>
-| CH 4,5,7
-| <span class="countdown" data-start="1773417600" data-end="1773424800"></span>
+<div class="lodRow" data-start="1773417600" data-end="1773424800" data-ch="4,5,7">
+<span class="start"></span>
+<span>-</span>
+<span class="end"></span>
+<span>CH 4,5,7</span>
+<span class="count"></span>
 </div>
 
 
-<div class="lodRow">
-<span class="lodTime" data-unix="1773428400"></span>
--
-<span class="lodTime" data-unix="1773435600"></span>
-| CH 4,5,6
-| <span class="countdown" data-start="1773428400" data-end="1773435600"></span>
+<div class="lodRow" data-start="1773428400" data-end="1773435600" data-ch="4,5,6">
+<span class="start"></span>
+<span>-</span>
+<span class="end"></span>
+<span>CH 4,5,6</span>
+<span class="count"></span>
 </div>
 
+</div>
 
 </div>
 
 <script>
 
 function formatTime(unix){
-const d = new Date(unix*1000)
-return d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})
+const d=new Date(unix*1000)
+return d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})
 }
 
 function update(){
 
-const now = Math.floor(Date.now()/1000)
+const now=Math.floor(Date.now()/1000)
 
-document.querySelectorAll(".lodTime").forEach(el=>{
-const t = el.dataset.unix
-el.innerText = formatTime(t)
-})
+let nextStart=null
+let nextChannels=""
 
-document.querySelectorAll(".countdown").forEach(el=>{
+document.querySelectorAll(".lodRow").forEach(row=>{
 
-const start = parseInt(el.dataset.start)
-const end = parseInt(el.dataset.end)
+const start=parseInt(row.dataset.start)
+const end=parseInt(row.dataset.end)
+const ch=row.dataset.ch
 
-if(now >= start && now <= end){
-el.innerText = "OPEN NOW"
-return
+const startEl=row.querySelector(".start")
+const endEl=row.querySelector(".end")
+const cd=row.querySelector(".count")
+
+startEl.innerText=formatTime(start)
+endEl.innerText=formatTime(end)
+
+if(now>=start && now<=end){
+cd.innerText="OPEN"
+row.classList.add("active")
+}else{
+
+const diff=start-now
+
+if(diff>0){
+
+const m=Math.floor(diff/60)
+const s=diff%60
+
+cd.innerText=m+"m "+s+"s"
+
+if(nextStart===null){
+nextStart=diff
+nextChannels=ch
 }
 
-const diff = start - now
-
-if(diff <= 0){
-el.innerText = "Finished"
-return
+}else{
+cd.innerText="-"
 }
 
-const m = Math.floor(diff/60)
-const s = diff % 60
-
-el.innerText = m + "m " + s + "s"
+}
 
 })
+
+if(nextStart!==null){
+
+const m=Math.floor(nextStart/60)
+const s=nextStart%60
+
+document.getElementById("nextLod").innerText =
+"🔥 Next LoD in "+m+"m "+s+"s (CH "+nextChannels+")"
+
+}else{
+document.getElementById("nextLod").innerText="🔥 LoD closed"
+}
 
 }
 
@@ -129,20 +157,33 @@ setInterval(update,1000)
 
 .lodBox{
 background:#1f1f1f;
-padding:15px;
-border-radius:12px;
-width:600px;
+padding:10px;
+border-radius:10px;
+width:420px;
 margin:auto;
-margin-bottom:25px;
+margin-bottom:20px;
+font-size:13px;
+}
+
+#nextLod{
+font-weight:bold;
+margin-bottom:8px;
+color:#ffcc66;
 }
 
 .lodRow{
-padding:6px 0;
+display:flex;
+justify-content:space-between;
+padding:4px 0;
 border-bottom:1px solid #333;
 }
 
 .lodRow:last-child{
 border-bottom:none;
+}
+
+.active{
+color:#7CFF8A;
 }
 
 </style>
