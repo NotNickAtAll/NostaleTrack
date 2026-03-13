@@ -197,12 +197,14 @@ async function loadFishing(){
 const r=await fetch("./fish_prices.json?"+Date.now())
 const data=await r.json()
 
-const best=data.best_zone
+const bestNPC = data.best_npc_zone
+const bestBazaar = data.best_bazaar_zone
 
 document.getElementById("bestZone").innerHTML =
-"🔥 "+best.zone+" → "+
-"🪙 "+best.npc_average_gold.toLocaleString()+" NPC / "+
-"🏪 "+best.bazaar_average_gold.toLocaleString()+" Bazaar gold / catch"
+"🪙 NPC best: <b>"+bestNPC.zone+"</b> → "+
+bestNPC.npc_average_gold.toLocaleString()+" gold / catch<br>"+
+"🏪 Bazaar best: <b>"+bestBazaar.zone+"</b> → "+
+bestBazaar.bazaar_average_gold.toLocaleString()+" gold / catch"
 
 const container=document.getElementById("zoneContainer")
 
