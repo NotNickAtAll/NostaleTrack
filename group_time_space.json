@@ -1,24 +1,35 @@
 {
-  "runs":[
+  "runs": [
     {
-      "range":"35-45",
-      "cost":12000,
-      "profit":42000,
-      "net_profit":30000
+      "range": "35-99",
+      "cost": 44996,
+      "solo_profit": 169740,
+      "solo_net_profit": 124744,
+      "solo_gold_hour": 2494880,
+      "trio_profit": 509220,
+      "trio_net_profit": 464224,
+      "trio_gold_hour": 9284480
     },
     {
-      "range":"45-55",
-      "cost":18000,
-      "profit":65000,
-      "net_profit":47000
+      "range": "45-99",
+      "cost": 144497,
+      "solo_profit": 254610,
+      "solo_net_profit": 110113,
+      "solo_gold_hour": 508213,
+      "trio_profit": 763830,
+      "trio_net_profit": 619333,
+      "trio_gold_hour": 2858459
     },
     {
-      "range":"55-65",
-      "cost":26000,
-      "profit":96000,
-      "net_profit":70000
+      "range": "50-99",
+      "cost": 217495,
+      "solo_profit": 254610,
+      "solo_net_profit": 37115,
+      "solo_gold_hour": 445380,
+      "trio_profit": 763830,
+      "trio_net_profit": 546335,
+      "trio_gold_hour": 6556020
     }
   ],
-
-  "updated": 1710330000
+  "updated": 1773419140
 }
