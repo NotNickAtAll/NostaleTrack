@@ -1,7 +1,7 @@
 {
   "spots":[
     {
-      "name":"Cursed Forest",
+      "name":"?",
       "profit_per_hour":85000,
       "drops":[
         {"item":"Dark Bark","value":25000},
@@ -9,7 +9,7 @@
       ]
     },
     {
-      "name":"Frozen Peaks",
+      "name":"?",
       "profit_per_hour":120000,
       "drops":[
         {"item":"Ice Crystal","value":45000},
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "name":"Volcanic Rift",
+      "name":"?",
       "profit_per_hour":165000,
       "drops":[
         {"item":"Lava Core","value":60000},
