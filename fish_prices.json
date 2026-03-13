@@ -6,11 +6,11 @@
 "npc_average_gold":1395,
 "bazaar_average_gold":0,
 "fish":[
-{"name":"Giant Catfish","chance":"1.2%","npc_value":35000,"bazaar_value":52500,"icon":"FishPng/giant_catfish.png"},
-{"name":"Silver Piranha","chance":"48.8%","npc_value":750,"bazaar_value":1125,"icon":"FishPng/silver_piranha.png"},
-{"name":"Bespectacled Carp","chance":"20%","npc_value":860,"bazaar_value":1290,"icon":"FishPng/bespectacled_carp.png"},
-{"name":"Chubby Carp","chance":"20%","npc_value":860,"bazaar_value":1290,"icon":"FishPng/chubby_carp.png"},
-{"name":"Catfish","chance":"10%","npc_value":2650,"bazaar_value":3975,"icon":"FishPng/catfish.png"}
+{"name":"Giant Catfish","chance":"1.2%","npc_value":35000,"bazaar_value":398000,"icon":"FishPng/giant_catfish.png"},
+{"name":"Silver Piranha","chance":"48.8%","npc_value":750,"bazaar_value":22000,"icon":"FishPng/silver_piranha.png"},
+{"name":"Bespectacled Carp","chance":"20%","npc_value":860,"bazaar_value":1200,"icon":"FishPng/bespectacled_carp.png"},
+{"name":"Chubby Carp","chance":"20%","npc_value":860,"bazaar_value":863,"icon":"FishPng/chubby_carp.png"},
+{"name":"Catfish","chance":"10%","npc_value":2650,"bazaar_value":15000,"icon":"FishPng/catfish.png"}
 ]
 },
 
@@ -19,9 +19,9 @@
 "npc_average_gold":1534,
 "bazaar_average_gold":0,
 "fish":[
-{"name":"Chocolate Shark","chance":"0.8%","npc_value":55000,"bazaar_value":82500,"icon":"FishPng/chocolate_shark.png"},
-{"name":"Red Starfish","chance":"49.2%","npc_value":800,"bazaar_value":1200,"icon":"FishPng/red_starfish.png"},
-{"name":"Blowfish","chance":"20%","npc_value":900,"bazaar_value":1350,"icon":"FishPng/blowfish.png"},
+{"name":"Chocolate Shark","chance":"0.8%","npc_value":55000,"bazaar_value":94000,"icon":"FishPng/chocolate_shark.png"},
+{"name":"Red Starfish","chance":"49.2%","npc_value":800,"bazaar_value":800,"icon":"FishPng/red_starfish.png"},
+{"name":"Blowfish","chance":"20%","npc_value":900,"bazaar_value":899,"icon":"FishPng/blowfish.png"},
 {"name":"Tipsy Pollock","chance":"20%","npc_value":900,"bazaar_value":1350,"icon":"FishPng/tipsy_pollock.png"},
 {"name":"Red Pollock","chance":"10%","npc_value":3400,"bazaar_value":5100,"icon":"FishPng/red_pollock.png"}
 ]
