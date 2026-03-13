@@ -58,14 +58,14 @@ fetch("fish_prices.json")
     const container = document.getElementById("fishContainer");
     container.innerHTML = "";
 
-    data.fish.forEach(f => {
+    data.zones.forEach(z => {
 
         const row = document.createElement("div");
         row.className = "price";
 
         row.innerHTML =
-            "<span>"+f.name+"</span>" +
-            "<span>"+f.price.toLocaleString()+"</span>";
+            "<span>Zone " + z.zone + "</span>" +
+            "<span>" + z.average_gold.toLocaleString() + " gold</span>";
 
         container.appendChild(row);
 
