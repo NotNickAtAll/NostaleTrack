@@ -1,38 +1,186 @@
 {
   "zones": [
+
     {
       "zone": "1-50",
       "fish": [
-        { "id": "giant_catfish", "chance": 1.2, "icon": "FishPng/giant_catfish.png" },
-        { "id": "silver_piranha", "chance": 48.8, "icon": "FishPng/silver_piranha.png" },
-        { "id": "bespectacled_carp", "chance": 20, "icon": "FishPng/bespectacled_carp.png" },
-        { "id": "chubby_carp", "chance": 20, "icon": "FishPng/chubby_carp.png" },
-        { "id": "catfish", "chance": 10, "icon": "FishPng/catfish.png" }
+        {"id":"giant_catfish","chance":1.2,"icon":"FishPng/giant_catfish.png"},
+        {"id":"silver_piranha","chance":48.8,"icon":"FishPng/silver_piranha.png"},
+        {"id":"bespectacled_carp","chance":20,"icon":"FishPng/bespectacled_carp.png"},
+        {"id":"chubby_carp","chance":20,"icon":"FishPng/chubby_carp.png"},
+        {"id":"catfish","chance":10,"icon":"FishPng/catfish.png"}
       ]
     },
 
     {
       "zone": "5-50",
       "fish": [
-        { "id": "chocolate_shark", "chance": 0.8, "icon": "FishPng/chocolate_shark.png" },
-        { "id": "red_starfish", "chance": 49.2, "icon": "FishPng/red_starfish.png" },
-        { "id": "blowfish", "chance": 20, "icon": "FishPng/blowfish.png" },
-        { "id": "tipsy_pollock", "chance": 20, "icon": "FishPng/tipsy_pollock.png" },
-        { "id": "red_pollock", "chance": 10, "icon": "FishPng/red_pollock.png" }
+        {"id":"chocolate_shark","chance":0.8,"icon":"FishPng/chocolate_shark.png"},
+        {"id":"red_starfish","chance":49.2,"icon":"FishPng/red_starfish.png"},
+        {"id":"blowfish","chance":20,"icon":"FishPng/blowfish.png"},
+        {"id":"tipsy_pollock","chance":20,"icon":"FishPng/tipsy_pollock.png"},
+        {"id":"red_pollock","chance":10,"icon":"FishPng/red_pollock.png"}
       ]
     },
 
     {
       "zone": "10-50",
       "fish": [
-        { "id": "arowana", "chance": 0.8, "icon": "FishPng/arowana.png" },
-        { "id": "silver_piranha", "chance": 40.2, "icon": "FishPng/silver_piranha.png" },
-        { "id": "bespectacled_carp", "chance": 13, "icon": "FishPng/bespectacled_carp.png" },
-        { "id": "green_sunfish", "chance": 12, "icon": "FishPng/green_sunfish.png" },
-        { "id": "red_bespectacled_carp", "chance": 12, "icon": "FishPng/red_bespectacled_carp.png" },
-        { "id": "chubby_carp", "chance": 12, "icon": "FishPng/chubby_carp.png" },
-        { "id": "salmon", "chance": 10, "icon": "FishPng/salmon.png" }
+        {"id":"arowana","chance":0.8,"icon":"FishPng/arowana.png"},
+        {"id":"silver_piranha","chance":40.2,"icon":"FishPng/silver_piranha.png"},
+        {"id":"bespectacled_carp","chance":13,"icon":"FishPng/bespectacled_carp.png"},
+        {"id":"green_sunfish","chance":12,"icon":"FishPng/green_sunfish.png"},
+        {"id":"red_bespectacled_carp","chance":12,"icon":"FishPng/red_bespectacled_carp.png"},
+        {"id":"chubby_carp","chance":12,"icon":"FishPng/chubby_carp.png"},
+        {"id":"salmon","chance":10,"icon":"FishPng/salmon.png"}
+      ]
+    },
+
+    {
+      "zone": "15-50",
+      "fish": [
+        {"id":"megalodon","chance":0.8,"icon":"FishPng/megalodon.png"},
+        {"id":"red_starfish","chance":40.2,"icon":"FishPng/red_starfish.png"},
+        {"id":"blowfish","chance":13,"icon":"FishPng/blowfish.png"},
+        {"id":"red_blowfish","chance":12,"icon":"FishPng/red_blowfish.png"},
+        {"id":"blue_starfish","chance":12,"icon":"FishPng/blue_starfish.png"},
+        {"id":"red_batstar","chance":12,"icon":"FishPng/red_batstar.png"},
+        {"id":"deep_sea_pollock","chance":10,"icon":"FishPng/deep_sea_pollock.png"}
+      ]
+    },
+
+    {
+      "zone": "20-50",
+      "fish": [
+        {"id":"frigus","chance":0.4,"icon":"FishPng/frigus.png"},
+        {"id":"blue_coelacanth","chance":0.4,"icon":"FishPng/blue_coelacanth.png"},
+        {"id":"red_starfish","chance":35.2,"icon":"FishPng/red_starfish.png"},
+        {"id":"blowfish","chance":10,"icon":"FishPng/blowfish.png"},
+        {"id":"blue_starfish","chance":10,"icon":"FishPng/blue_starfish.png"},
+        {"id":"red_blowfish","chance":9,"icon":"FishPng/red_blowfish.png"},
+        {"id":"red_batstar","chance":9,"icon":"FishPng/red_batstar.png"},
+        {"id":"blue_batstar","chance":8,"icon":"FishPng/blue_batstar.png"},
+        {"id":"squid","chance":8,"icon":"FishPng/squid.png"},
+        {"id":"rugged_sea_turtle","chance":5,"icon":"FishPng/rugged_sea_turtle.png"},
+        {"id":"violet_sea_turtle","chance":5,"icon":"FishPng/violet_sea_turtle.png"}
+      ]
+    },
+
+    {
+      "zone": "25-50",
+      "fish": [
+        {"id":"river_tyrant","chance":0.4,"icon":"FishPng/river_tyrant.png"},
+        {"id":"silver_piranha","chance":30.6,"icon":"FishPng/silver_piranha.png"},
+        {"id":"chubby_carp","chance":10,"icon":"FishPng/chubby_carp.png"},
+        {"id":"really_chubby_carp","chance":10,"icon":"FishPng/really_chubby_carp.png"},
+        {"id":"river_guppy","chance":10,"icon":"FishPng/river_guppy.png"},
+        {"id":"red_sunfish","chance":10,"icon":"FishPng/red_sunfish.png"},
+        {"id":"snakehead","chance":8,"icon":"FishPng/snakehead.png"},
+        {"id":"green_sunfish","chance":8,"icon":"FishPng/green_sunfish.png"},
+        {"id":"river_goby","chance":6,"icon":"FishPng/river_goby.png"},
+        {"id":"catfish","chance":7,"icon":"FishPng/catfish.png"}
+      ]
+    },
+
+    {
+      "zone": "30-50",
+      "fish": [
+        {"id":"octopus","chance":0.4,"icon":"FishPng/octopus.png"},
+        {"id":"sea_fossil","chance":0.4,"icon":"FishPng/sea_fossil.png"},
+        {"id":"red_starfish","chance":30.2,"icon":"FishPng/red_starfish.png"},
+        {"id":"squid","chance":10,"icon":"FishPng/squid.png"},
+        {"id":"porky_pollock","chance":15,"icon":"FishPng/porky_pollock.png"},
+        {"id":"blue_batstar","chance":10,"icon":"FishPng/blue_batstar.png"},
+        {"id":"molly","chance":9,"icon":"FishPng/molly.png"},
+        {"id":"fighting_fish","chance":9,"icon":"FishPng/fighting_fish.png"},
+        {"id":"tuna","chance":8,"icon":"FishPng/tuna.png"},
+        {"id":"tropical_pollock","chance":8,"icon":"FishPng/tropical_pollock.png"}
+      ]
+    },
+
+    {
+      "zone": "35-50",
+      "fish": [
+        {"id":"black_speckled_sturgeon","chance":0.4,"icon":"FishPng/black_speckled_sturgeon.png"},
+        {"id":"armoured_sturgeon","chance":0.4,"icon":"FishPng/armoured_sturgeon.png"},
+        {"id":"silver_piranha","chance":19.2,"icon":"FishPng/silver_piranha.png"},
+        {"id":"chubby_carp","chance":10,"icon":"FishPng/chubby_carp.png"},
+        {"id":"blue_piranha","chance":8,"icon":"FishPng/blue_piranha.png"},
+        {"id":"green_piranha","chance":8,"icon":"FishPng/green_piranha.png"},
+        {"id":"green_sunfish","chance":7,"icon":"FishPng/green_sunfish.png"},
+        {"id":"red_sunfish","chance":8,"icon":"FishPng/red_sunfish.png"},
+        {"id":"snakehead","chance":6,"icon":"FishPng/snakehead.png"},
+        {"id":"red_snakehead","chance":6,"icon":"FishPng/red_snakehead.png"},
+        {"id":"suckermouth_catfish","chance":6,"icon":"FishPng/suckermouth_catfish.png"},
+        {"id":"stick_fish","chance":6,"icon":"FishPng/stick_fish.png"},
+        {"id":"sockeye_salmon","chance":5,"icon":"FishPng/sockeye_salmon.png"},
+        {"id":"goby_minnow","chance":5,"icon":"FishPng/goby_minnow.png"},
+        {"id":"eel","chance":5,"icon":"FishPng/eel.png"}
+      ]
+    },
+
+    {
+      "zone": "40-50",
+      "fish": [
+        {"id":"black_alligator","chance":0.4,"icon":"FishPng/black_alligator.png"},
+        {"id":"frogfish","chance":0.4,"icon":"FishPng/frogfish.png"},
+        {"id":"silver_piranha","chance":10.2,"icon":"FishPng/silver_piranha.png"},
+        {"id":"green_sunfish","chance":10,"icon":"FishPng/green_sunfish.png"},
+        {"id":"chubby_carp","chance":10,"icon":"FishPng/chubby_carp.png"},
+        {"id":"really_chubby_carp","chance":9,"icon":"FishPng/really_chubby_carp.png"},
+        {"id":"stick_fish","chance":6,"icon":"FishPng/stick_fish.png"},
+        {"id":"red_sunfish","chance":10,"icon":"FishPng/red_sunfish.png"},
+        {"id":"red_bespectacled_carp","chance":10,"icon":"FishPng/red_bespectacled_carp.png"},
+        {"id":"red_snakehead","chance":8,"icon":"FishPng/red_snakehead.png"},
+        {"id":"suckermouth_catfish","chance":6,"icon":"FishPng/suckermouth_catfish.png"},
+        {"id":"silver_suckermouth_catfish","chance":5,"icon":"FishPng/silver_suckermouth_catfish.png"},
+        {"id":"predatory_goby_minnow","chance":5,"icon":"FishPng/predatory_goby_minnow.png"},
+        {"id":"river_goby","chance":5,"icon":"FishPng/river_goby.png"},
+        {"id":"river_ray","chance":5,"icon":"FishPng/river_ray.png"}
+      ]
+    },
+
+    {
+      "zone": "45-50",
+      "fish": [
+        {"id":"blessed_frogfish","chance":0.4,"icon":"FishPng/blessed_frogfish.png"},
+        {"id":"river_guardian","chance":0.4,"icon":"FishPng/river_guardian.png"},
+        {"id":"silver_piranha","chance":18.7,"icon":"FishPng/silver_piranha.png"},
+        {"id":"green_piranha","chance":12,"icon":"FishPng/green_piranha.png"},
+        {"id":"blue_piranha","chance":12,"icon":"FishPng/blue_piranha.png"},
+        {"id":"red_snakehead","chance":10,"icon":"FishPng/red_snakehead.png"},
+        {"id":"red_suckermouth_catfish","chance":6,"icon":"FishPng/red_suckermouth_catfish.png"},
+        {"id":"green_catfish","chance":5,"icon":"FishPng/green_catfish.png"},
+        {"id":"green_river_goby","chance":5,"icon":"FishPng/green_river_goby.png"},
+        {"id":"river_guppy","chance":8,"icon":"FishPng/river_guppy.png"},
+        {"id":"yellow_spotted_river_ray","chance":3,"icon":"FishPng/yellow_spotted_river_ray.png"},
+        {"id":"vampire_fish","chance":3,"icon":"FishPng/vampire_fish.png"},
+        {"id":"leaffish","chance":6,"icon":"FishPng/leaffish.png"},
+        {"id":"terrapin","chance":5,"icon":"FishPng/terrapin.png"},
+        {"id":"ultramarine_armoured_terrapin","chance":5.5,"icon":"FishPng/ultramarine_armoured_terrapin.png"}
+      ]
+    },
+
+    {
+      "zone": "50-50",
+      "fish": [
+        {"id":"flame_stingray","chance":0.4,"icon":"FishPng/flame_stingray.png"},
+        {"id":"blue_flame_stingray","chance":0.4,"icon":"FishPng/blue_flame_stingray.png"},
+        {"id":"lava_tyrant","chance":0.4,"icon":"FishPng/lava_tyrant.png"},
+        {"id":"charred_bunfish","chance":9.3,"icon":"FishPng/charred_bunfish.png"},
+        {"id":"bunfish","chance":9.3,"icon":"FishPng/bunfish.png"},
+        {"id":"piquant_bunfish","chance":9.3,"icon":"FishPng/piquant_bunfish.png"},
+        {"id":"lava_snapper","chance":9.4,"icon":"FishPng/lava_snapper.png"},
+        {"id":"blue_flame_snapper","chance":9,"icon":"FishPng/blue_flame_snapper.png"},
+        {"id":"black_lava_snapper","chance":9,"icon":"FishPng/black_lava_snapper.png"},
+        {"id":"lava_shark","chance":9,"icon":"FishPng/lava_shark.png"},
+        {"id":"blue_lava_shark","chance":7,"icon":"FishPng/blue_lava_shark.png"},
+        {"id":"lava_horseshoe_crab","chance":9,"icon":"FishPng/lava_horseshoe_crab.png"},
+        {"id":"red_lava_horseshoe_crab","chance":6.5,"icon":"FishPng/red_lava_horseshoe_crab.png"},
+        {"id":"lava_sea_snail","chance":9,"icon":"FishPng/lava_sea_snail.png"},
+        {"id":"red_lava_sea_snail","chance":3,"icon":"FishPng/red_lava_sea_snail.png"}
       ]
     }
+
   ]
 }
