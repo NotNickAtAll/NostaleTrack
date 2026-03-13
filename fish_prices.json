@@ -1,150 +1,70 @@
 {
-  "zones": [
+  "zones":[
     {
-      "zone": "1-50",
-      "average_gold": 11300,
-      "main_driver": "Silver Piranha",
-      "contributors": [
-        { "name": "Silver Piranha", "value": 9760 },
-        { "name": "Catfish", "value": 800 },
-        { "name": "Giant Catfish", "value": 420 },
-        { "name": "Others", "value": 320 }
-      ],
-      "profile": "Very stable. Silver Piranha carries almost the entire economy."
+      "zone":"50-50",
+      "average_gold":25200,
+      "fish":[
+        {"name":"Red Lava Horseshoe Crab","chance":"8%","value":11700},
+        {"name":"Lava Tyrant","chance":"5%","value":4000},
+        {"name":"Lava Snapper","chance":"7%","value":2350},
+        {"name":"Piquant Bunfish","chance":"6%","value":1674},
+        {"name":"Flame Stingray","chance":"10%","value":920}
+      ]
     },
+
     {
-      "zone": "5-50",
-      "average_gold": 12700,
-      "main_driver": "Red Pollock",
-      "contributors": [
-        { "name": "Red Pollock", "value": 10600 },
-        { "name": "Chocolate Shark", "value": 1440 },
-        { "name": "Others", "value": 660 }
-      ],
-      "profile": "Strong 10% premium fish. Moderate stability."
+      "zone":"45-50",
+      "average_gold":16500,
+      "fish":[
+        {"name":"Silver Piranha","chance":"18%","value":3740},
+        {"name":"Green Piranha","chance":"12%","value":2400},
+        {"name":"Terrapin","chance":"9%","value":1750},
+        {"name":"River Guardian","chance":"5%","value":1800},
+        {"name":"Ultramarine Terrapin","chance":"2%","value":880}
+      ]
     },
+
     {
-      "zone": "10-50",
-      "average_gold": 13700,
-      "main_driver": "Silver Piranha + Salmon",
-      "contributors": [
-        { "name": "Silver Piranha", "value": 8040 },
-        { "name": "Salmon", "value": 4800 },
-        { "name": "Arowana", "value": 480 },
-        { "name": "Others", "value": 380 }
-      ],
-      "profile": "Extremely stable. Two strong mid-tier pillars."
+      "zone":"40-50",
+      "average_gold":14800,
+      "fish":[
+        {"name":"Frogfish","chance":"8%","value":5600},
+        {"name":"Black Alligator","chance":"6%","value":4000},
+        {"name":"Silver Piranha","chance":"15%","value":2040},
+        {"name":"Giant Goby","chance":"10%","value":1650},
+        {"name":"Electric Ray","chance":"5%","value":1500}
+      ]
     },
+
     {
-      "zone": "15-50",
-      "average_gold": 13100,
-      "main_driver": "Deep-Sea Pollock",
-      "contributors": [
-        { "name": "Deep-Sea Pollock", "value": 10700 },
-        { "name": "Red Batstar", "value": 960 },
-        { "name": "Megalodon", "value": 800 },
-        { "name": "Others", "value": 640 }
-      ],
-      "profile": "More spike-dependent than 10-50."
+      "zone":"35-50",
+      "average_gold":13800,
+      "fish":[
+        {"name":"Sockeye Salmon","chance":"10%","value":4000},
+        {"name":"Silver Piranha","chance":"20%","value":3840},
+        {"name":"Green Piranha","chance":"10%","value":1600},
+        {"name":"Blue Piranha","chance":"10%","value":1600},
+        {"name":"River Catfish","chance":"12%","value":1200}
+      ]
     },
+
     {
-      "zone": "20-50",
-      "average_gold": 8500,
-      "main_driver": "Frigus + Blue Coelacanth",
-      "contributors": [
-        { "name": "Frigus", "value": 2800 },
-        { "name": "Blue Coelacanth", "value": 3400 },
-        { "name": "Sea Turtles", "value": 1400 },
-        { "name": "Others", "value": 900 }
-      ],
-      "profile": "Lottery zone. High variance."
-    },
-    {
-      "zone": "25-50",
-      "average_gold": 8900,
-      "main_driver": "Silver Piranha",
-      "contributors": [
-        { "name": "Silver Piranha", "value": 6120 },
-        { "name": "River Goby", "value": 780 },
-        { "name": "Catfish", "value": 560 },
-        { "name": "Others", "value": 1440 }
-      ],
-      "profile": "Stable but lower ceiling."
-    },
-    {
-      "zone": "30-50",
-      "average_gold": 15500,
-      "main_driver": "Tropical Pollock",
-      "contributors": [
-        { "name": "Tropical Pollock", "value": 12000 },
-        { "name": "Sea Fossil", "value": 1200 },
-        { "name": "Tuna", "value": 800 },
-        { "name": "Octopus", "value": 400 },
-        { "name": "Others", "value": 1100 }
-      ],
-      "profile": "Very efficient. 8% monster fish dominates."
-    },
-    {
-      "zone": "35-50",
-      "average_gold": 13800,
-      "main_driver": "Sockeye Salmon + Piranha group",
-      "contributors": [
-        { "name": "Silver Piranha", "value": 3840 },
-        { "name": "Blue + Green Piranha", "value": 3200 },
-        { "name": "Sockeye Salmon", "value": 4000 },
-        { "name": "Others", "value": 2760 }
-      ],
-      "profile": "Balanced and smooth. Low variance."
-    },
-    {
-      "zone": "40-50",
-      "average_gold": 14800,
-      "main_driver": "Frogfish + Black Alligator",
-      "contributors": [
-        { "name": "Frogfish", "value": 5600 },
-        { "name": "Black Alligator", "value": 4000 },
-        { "name": "Silver Piranha", "value": 2040 },
-        { "name": "Goby/Ray group", "value": 1650 },
-        { "name": "Others", "value": 1500 }
-      ],
-      "profile": "High jackpot spikes. Moderate consistency."
-    },
-    {
-      "zone": "45-50",
-      "average_gold": 16500,
-      "main_driver": "Piranha ecosystem",
-      "contributors": [
-        { "name": "Silver Piranha", "value": 3740 },
-        { "name": "Green + Blue Piranha", "value": 4800 },
-        { "name": "Terrapin", "value": 1750 },
-        { "name": "River Guardian", "value": 1800 },
-        { "name": "Ultramarine Terrapin", "value": 880 },
-        { "name": "Others", "value": 3500 }
-      ],
-      "profile": "Extremely well distributed income. Very stable."
-    },
-    {
-      "zone": "50-50",
-      "average_gold": 25200,
-      "main_driver": "Red Lava Horseshoe Crab",
-      "contributors": [
-        { "name": "Red Lava Horseshoe Crab", "value": 11700 },
-        { "name": "Lava Tyrant", "value": 4000 },
-        { "name": "Lava Snapper", "value": 2350 },
-        { "name": "Piquant Bunfish", "value": 1674 },
-        { "name": "Flame Stingray", "value": 920 },
-        { "name": "Others", "value": 4500 }
-      ],
-      "profile": "Absolute king. High mid-tier value + jackpot synergy."
+      "zone":"30-50",
+      "average_gold":15500,
+      "fish":[
+        {"name":"Tropical Pollock","chance":"8%","value":12000},
+        {"name":"Sea Fossil","chance":"4%","value":1200},
+        {"name":"Tuna","chance":"10%","value":800},
+        {"name":"Octopus","chance":"7%","value":400},
+        {"name":"Coral Fish","chance":"9%","value":1100}
+      ]
     }
   ],
 
-  "best_zone": {
-    "zone": "50-50",
-    "average_gold": 25200
+  "best_zone":{
+    "zone":"50-50",
+    "average_gold":25200
   },
 
-  "note": "Profit calculations include only direct fish catches and exclude random boxes.",
-
-  "updated": 1710330000
+  "updated":1710330000
 }
