@@ -4,7 +4,36 @@
             "name": "Giant Catfish",
             "npc": 35000,
             "bazaar": 398000
-        },
+        }, "seed_of_power": {
+      "name": "Seed of Power",
+      "npc": 0,
+      "bazaar": 0
+    },
+
+    "new_moon_crystal": {
+      "name": "New Moon Crystal",
+      "npc": 0,
+      "bazaar": 1666
+    },
+
+    "half_moon_crystal": {
+      "name": "Half Moon Crystal",
+      "npc": 0,
+      "bazaar": 36499
+    },
+
+    "group_time_space_piece": {
+      "name": "Group Time-space Piece",
+      "npc": 0,
+      "bazaar": 35000
+    },
+
+    "gillion_stone": {
+      "name": "Gillion Stone",
+      "npc": 0,
+      "bazaar": 8487
+    },
+
         "silver_piranha": {
             "name": "Silver Piranha",
             "npc": 750,
