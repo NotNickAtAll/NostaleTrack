@@ -1,68 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <title>The Nostale Helper</title>
 
-<link rel="icon" href="favicon.png?v=5">
+<link rel="icon" href="favicon.png?v=6">
 
 <style>
 
 body{
-    font-family: Arial;
-    background:#121212;
-    color:white;
-    text-align:center;
-    padding-top:40px;
+font-family:Arial;
+background:#121212;
+color:white;
+text-align:center;
+padding-top:40px;
 }
 
 h1{
-    font-size:42px;
+font-size:42px;
 }
 
 .container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    margin-top:30px;
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
 }
 
 .panel{
-    width:380px;
+width:380px;
 }
 
 .card{
-    background:#1f1f1f;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:12px;
+background:#1f1f1f;
+padding:20px;
+border-radius:12px;
 }
 
 .row{
-    display:flex;
-    justify-content:space-between;
-    padding:6px 0;
-    border-bottom:1px solid #333;
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border-bottom:1px solid #333;
 }
 
 .row:last-child{
-    border-bottom:none;
+border-bottom:none;
+}
+
+.clickable{
+cursor:pointer;
+transition:0.15s;
+}
+
+.clickable:hover{
+background:#2a2a2a;
 }
 
 .best{
-    font-size:20px;
-    color:#ffcc00;
-}
-
-.updated{
-    margin-top:10px;
-    font-size:12px;
-    color:#aaa;
+font-size:20px;
+color:#ffcc00;
+margin-bottom:15px;
 }
 
 .title{
-    font-size:20px;
-    margin-bottom:10px;
+font-size:20px;
+margin-bottom:10px;
+}
+
+.details{
+margin-top:15px;
+border-top:1px solid #333;
+padding-top:10px;
+}
+
+.updated{
+margin-top:20px;
+font-size:13px;
+color:#aaa;
 }
 
 </style>
@@ -75,38 +91,50 @@ h1{
 
 <div class="container">
 
-<!-- FISHING -->
+<!-- Fishing -->
+
 <div class="panel">
 
 <div class="card">
+
 <div class="title">🎣 Fishing</div>
+
 <div id="bestZone" class="best">Loading...</div>
+
+<div id="zoneContainer"></div>
+
+<div id="fishDetails" class="details"></div>
+
 </div>
 
-<div class="card" id="zoneContainer">
-Loading zones...
-</div>
-
 </div>
 
 
-<!-- TIME SPACE -->
+<!-- Time Space -->
+
 <div class="panel">
 
 <div class="card">
+
 <div class="title">🌀 Group Time Space</div>
+
 <div id="tsContainer">Loading...</div>
-</div>
 
 </div>
 
+</div>
 
-<!-- GRINDING -->
+
+<!-- Grinding -->
+
 <div class="panel">
 
 <div class="card">
+
 <div class="title">⚔ Grinding Spots</div>
+
 <div id="grindContainer">Loading...</div>
+
 </div>
 
 </div>
@@ -119,107 +147,147 @@ Loading zones...
 
 function timeAgo(timestamp){
 
-    const now=Math.floor(Date.now()/1000)
-    const diff=now-timestamp
+const now=Math.floor(Date.now()/1000)
+const diff=now-timestamp
 
-    if(diff<60) return diff+" sec ago"
+if(diff<60) return diff+" sec ago"
 
-    const min=Math.floor(diff/60)
+const min=Math.floor(diff/60)
 
-    if(min<60) return min+" min ago"
+if(min<60) return min+" min ago"
 
-    const h=Math.floor(min/60)
+const h=Math.floor(min/60)
 
-    if(h<24) return h+" hr ago"
+if(h<24) return h+" hr ago"
 
-    return Math.floor(h/24)+" days ago"
+return Math.floor(h/24)+" days ago"
+
 }
 
 async function loadFishing(){
 
-    const r=await fetch("./fish_prices.json?"+Date.now())
-    const data=await r.json()
+const r=await fetch("./fish_prices.json?"+Date.now())
+const data=await r.json()
 
-    const best=data.best_zone
+const best=data.best_zone
 
-    document.getElementById("bestZone").innerHTML=
-        "🔥 "+best.zone+" → "+best.average_gold.toLocaleString()+" gold"
+document.getElementById("bestZone").innerHTML=
+"🔥 "+best.zone+" → "+best.average_gold.toLocaleString()+" gold / catch"
 
-    const c=document.getElementById("zoneContainer")
-    c.innerHTML=""
+const container=document.getElementById("zoneContainer")
 
-    data.zones
-        .sort((a,b)=>b.average_gold-a.average_gold)
-        .forEach(z=>{
+container.innerHTML=""
 
-        const row=document.createElement("div")
-        row.className="row"
+data.zones
+.sort((a,b)=>b.average_gold-a.average_gold)
+.forEach(zone=>{
 
-        row.innerHTML=
-            "<span>"+z.zone+"</span>"+
-            "<span>"+z.average_gold.toLocaleString()+"</span>"
+const row=document.createElement("div")
 
-        c.appendChild(row)
+row.className="row clickable"
 
-    })
+row.innerHTML=
+"<span>"+zone.zone+"</span>"+
+"<span>"+zone.average_gold.toLocaleString()+"</span>"
 
-    document.getElementById("updatedTime").innerText=
-        "Fishing updated "+timeAgo(data.updated)
+row.onclick=()=>showFish(zone)
+
+container.appendChild(row)
+
+})
+
+document.getElementById("updatedTime").innerText=
+"Fishing updated "+timeAgo(data.updated)
+
 }
 
+function showFish(zone){
+
+const panel=document.getElementById("fishDetails")
+
+panel.innerHTML=""
+
+const title=document.createElement("div")
+
+title.style.marginBottom="10px"
+
+title.style.fontWeight="bold"
+
+title.innerText="Fish in zone "+zone.zone
+
+panel.appendChild(title)
+
+zone.fish.forEach(f=>{
+
+const row=document.createElement("div")
+
+row.className="row"
+
+row.innerHTML=
+"<span>"+f.name+" ("+f.chance+")</span>"+
+"<span>"+f.value.toLocaleString()+"</span>"
+
+panel.appendChild(row)
+
+})
+
+}
 
 async function loadTS(){
 
-    const r=await fetch("./group_time_space.json?"+Date.now())
-    const data=await r.json()
+const r=await fetch("./group_time_space.json?"+Date.now())
+const data=await r.json()
 
-    const c=document.getElementById("tsContainer")
-    c.innerHTML=""
+const c=document.getElementById("tsContainer")
 
-    data.runs.forEach(run=>{
+c.innerHTML=""
 
-        const row=document.createElement("div")
-        row.className="row"
+data.runs.forEach(run=>{
 
-        row.innerHTML=
-            "<span>"+run.range+"</span>"+
-            "<span>"+run.net_profit.toLocaleString()+" net</span>"
+const row=document.createElement("div")
 
-        c.appendChild(row)
+row.className="row clickable"
 
-    })
+row.innerHTML=
+"<span>"+run.range+"</span>"+
+"<span>"+run.net_profit.toLocaleString()+" net</span>"
+
+c.appendChild(row)
+
+})
 
 }
 
-
 async function loadGrinding(){
 
-    const r=await fetch("./grinding_spots.json?"+Date.now())
-    const data=await r.json()
+const r=await fetch("./grinding_spots.json?"+Date.now())
+const data=await r.json()
 
-    const c=document.getElementById("grindContainer")
-    c.innerHTML=""
+const c=document.getElementById("grindContainer")
 
-    data.spots.forEach(s=>{
+c.innerHTML=""
 
-        const row=document.createElement("div")
-        row.className="row"
+data.spots.forEach(s=>{
 
-        row.innerHTML=
-            "<span>"+s.name+"</span>"+
-            "<span>"+s.profit_per_hour.toLocaleString()+"/h</span>"
+const row=document.createElement("div")
 
-        c.appendChild(row)
+row.className="row clickable"
 
-    })
+row.innerHTML=
+"<span>"+s.name+"</span>"+
+"<span>"+s.profit_per_hour.toLocaleString()+"/h</span>"
+
+c.appendChild(row)
+
+})
 
 }
 
 async function loadAll(){
 
-    loadFishing()
-    loadTS()
-    loadGrinding()
+loadFishing()
+loadTS()
+loadGrinding()
 
 }
 
@@ -230,4 +298,5 @@ setInterval(loadAll,30000)
 </script>
 
 </body>
+
 </html>
