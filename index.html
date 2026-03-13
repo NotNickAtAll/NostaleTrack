@@ -148,7 +148,7 @@ return Math.floor(h/24)+" days ago"
 async function loadFishing(){
 
 const zonesData = await fetch("./zones.json?"+Date.now()).then(r=>r.json())
-const pricesData = await fetch("./fish_prices.json?"+Date.now()).then(r=>r.json())
+const pricesData = await fetch("./prices.json?"+Date.now()).then(r=>r.json())
 
 const prices = pricesData.fish_prices
 
