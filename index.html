@@ -185,7 +185,9 @@ const data=await r.json()
 const best=data.best_zone
 
 document.getElementById("bestZone").innerHTML=
-"🔥 "+best.zone+" → "+best.average_gold.toLocaleString()+" gold / catch"
+"🔥 "+best.zone+" → "+
+best.average_gold.toLocaleString()+" NPC / "+
+best.bazaar_average_gold.toLocaleString()+" Bazaar gold / catch"
 
 const container=document.getElementById("zoneContainer")
 
