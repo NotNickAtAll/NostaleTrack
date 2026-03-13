@@ -3,7 +3,7 @@
 
 {
 "zone":"1-50",
-"npc_average_gold":0,
+"npc_average_gold":1,395,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Giant Catfish","chance":"1.2%","npc_value":35000,"bazaar_value":52500,"icon":"FishPng/giant_catfish.png"},
@@ -16,7 +16,7 @@
 
 {
 "zone":"5-50",
-"npc_average_gold":0,
+"npc_average_gold":1,534,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Chocolate Shark","chance":"0.8%","npc_value":55000,"bazaar_value":82500,"icon":"FishPng/chocolate_shark.png"},
@@ -29,7 +29,7 @@
 
 {
 "zone":"10-50",
-"npc_average_gold":0,
+"npc_average_gold":1,669,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Arowana","chance":"0.8%","npc_value":60000,"bazaar_value":90000,"icon":"FishPng/arowana.png"},
@@ -44,7 +44,7 @@
 
 {
 "zone":"15-50",
-"npc_average_gold":0,
+"npc_average_gold":1,901,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Megalodon","chance":"0.8%","npc_value":70000,"bazaar_value":105000,"icon":"FishPng/megalodon.png"},
@@ -59,7 +59,7 @@
 
 {
 "zone":"20-50",
-"npc_average_gold":0,
+"npc_average_gold":2,069,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Frigus","chance":"0.4%","npc_value":80000,"bazaar_value":120000,"icon":"FishPng/frigus.png"},
@@ -78,7 +78,7 @@
 
 {
 "zone":"25-50",
-"npc_average_gold":0,
+"npc_average_gold":2,218,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"River Tyrant","chance":"0.4%","npc_value":170000,"bazaar_value":255000,"icon":"FishPng/river_tyrant.png"},
@@ -96,7 +96,7 @@
 
 {
 "zone":"30-50",
-"npc_average_gold":0,
+"npc_average_gold":2,873,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Octopus","chance":"0.4%","npc_value":100000,"bazaar_value":150000,"icon":"FishPng/octopus.png"},
@@ -114,7 +114,7 @@
 
 {
 "zone":"35-50",
-"npc_average_gold":0,
+"npc_average_gold":3,438,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Black Speckled Sturgeon","chance":"0.4%","npc_value":135000,"bazaar_value":202500,"icon":"FishPng/black_speckled_sturgeon.png"},
@@ -137,7 +137,7 @@
 
 {
 "zone":"40-50",
-"npc_average_gold":0,
+"npc_average_gold":3,867,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Black Alligator","chance":"0.4%","npc_value":175000,"bazaar_value":262500,"icon":"FishPng/black_alligator.png"},
@@ -160,7 +160,7 @@
 
 {
 "zone":"45-50",
-"npc_average_gold":0,
+"npc_average_gold":4,953,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Blessed Frogfish","chance":"0.4%","npc_value":190000,"bazaar_value":285000,"icon":"FishPng/blessed_frogfish.png"},
@@ -183,7 +183,7 @@
 
 {
 "zone":"50-50",
-"npc_average_gold":0,
+"npc_average_gold":6,064,
 "bazaar_average_gold":0,
 "fish":[
 {"name":"Flame Stingray","chance":"0.4%","npc_value":170000,"bazaar_value":255000,"icon":"FishPng/flame_stingray.png"},
@@ -206,7 +206,7 @@
 
 ],
 
-"best_npc_zone":{"zone":"1-50","npc_average_gold":0},
+"best_npc_zone":{"zone":"50-50","npc_average_gold":6,064},
 "best_bazaar_zone":{"zone":"1-50","bazaar_average_gold":0},
 "updated":1710330000
 }
