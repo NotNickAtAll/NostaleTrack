@@ -5,7 +5,7 @@
 
 <title>The Nostale Helper</title>
 
-<link rel="icon" href="favicon.png?v=7">
+<link rel="icon" href="favicon.png?v=8">
 
 <style>
 
@@ -41,6 +41,7 @@ border-radius:12px;
 .row{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:8px 0;
 border-bottom:1px solid #333;
 }
@@ -78,6 +79,18 @@ padding:10px 0;
 margin-top:20px;
 font-size:13px;
 color:#aaa;
+}
+
+.fishName{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.fishIcon{
+width:28px;
+height:28px;
+image-rendering:pixelated;
 }
 
 </style>
@@ -229,7 +242,10 @@ const r=document.createElement("div")
 r.className="row"
 
 r.innerHTML=
-"<span>"+f.name+" ("+f.chance+")</span>"+
+"<span class='fishName'>" +
+"<img src='"+f.icon+"' class='fishIcon'>" +
+f.name+" ("+f.chance+")" +
+"</span>" +
 "<span>"+f.value.toLocaleString()+"</span>"
 
 details.appendChild(r)
