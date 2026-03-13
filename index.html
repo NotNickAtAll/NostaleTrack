@@ -4,7 +4,7 @@
 
 <title>The Nostale Helper</title>
 
-<link rel="icon" href="favicon.png?v=4">
+<link rel="icon" href="favicon.png?v=5">
 
 <style>
 
@@ -13,25 +13,35 @@ body{
     background:#121212;
     color:white;
     text-align:center;
-    padding-top:60px;
+    padding-top:40px;
 }
 
 h1{
     font-size:42px;
 }
 
+.container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:30px;
+}
+
+.panel{
+    width:380px;
+}
+
 .card{
     background:#1f1f1f;
     padding:20px;
-    margin:20px auto;
-    width:420px;
+    margin-bottom:20px;
     border-radius:12px;
 }
 
 .row{
     display:flex;
     justify-content:space-between;
-    padding:8px 0;
+    padding:6px 0;
     border-bottom:1px solid #333;
 }
 
@@ -40,18 +50,19 @@ h1{
 }
 
 .best{
-    font-size:22px;
+    font-size:20px;
     color:#ffcc00;
 }
 
 .updated{
-    margin-top:20px;
-    font-size:13px;
+    margin-top:10px;
+    font-size:12px;
     color:#aaa;
 }
 
-.error{
-    color:red;
+.title{
+    font-size:20px;
+    margin-bottom:10px;
 }
 
 </style>
@@ -62,12 +73,44 @@ h1{
 
 <h1>The Nostale Helper</h1>
 
+<div class="container">
+
+<!-- FISHING -->
+<div class="panel">
+
 <div class="card">
-    <div id="bestZone" class="best">Loading best zone...</div>
+<div class="title">🎣 Fishing</div>
+<div id="bestZone" class="best">Loading...</div>
 </div>
 
 <div class="card" id="zoneContainer">
-Loading fishing zones...
+Loading zones...
+</div>
+
+</div>
+
+
+<!-- TIME SPACE -->
+<div class="panel">
+
+<div class="card">
+<div class="title">🌀 Group Time Space</div>
+<div id="tsContainer">Loading...</div>
+</div>
+
+</div>
+
+
+<!-- GRINDING -->
+<div class="panel">
+
+<div class="card">
+<div class="title">⚔ Grinding Spots</div>
+<div id="grindContainer">Loading...</div>
+</div>
+
+</div>
+
 </div>
 
 <div id="updatedTime" class="updated"></div>
@@ -76,79 +119,113 @@ Loading fishing zones...
 
 function timeAgo(timestamp){
 
-    const now = Math.floor(Date.now()/1000);
-    const diff = now - timestamp;
+    const now=Math.floor(Date.now()/1000)
+    const diff=now-timestamp
 
-    if(diff < 60) return diff + " seconds ago";
+    if(diff<60) return diff+" sec ago"
 
-    const minutes = Math.floor(diff/60);
+    const min=Math.floor(diff/60)
 
-    if(minutes < 60) return minutes + " minutes ago";
+    if(min<60) return min+" min ago"
 
-    const hours = Math.floor(minutes/60);
+    const h=Math.floor(min/60)
 
-    if(hours < 24) return hours + " hours ago";
+    if(h<24) return h+" hr ago"
 
-    const days = Math.floor(hours/24);
-
-    return days + " days ago";
+    return Math.floor(h/24)+" days ago"
 }
 
-async function loadData(){
+async function loadFishing(){
 
-    try{
+    const r=await fetch("./fish_prices.json?"+Date.now())
+    const data=await r.json()
 
-        const response = await fetch("./fish_prices.json?nocache=" + Date.now());
+    const best=data.best_zone
 
-        if(!response.ok){
-            throw new Error("JSON file not found");
-        }
+    document.getElementById("bestZone").innerHTML=
+        "🔥 "+best.zone+" → "+best.average_gold.toLocaleString()+" gold"
 
-        const data = await response.json();
+    const c=document.getElementById("zoneContainer")
+    c.innerHTML=""
 
-        const best = data.best_zone;
+    data.zones
+        .sort((a,b)=>b.average_gold-a.average_gold)
+        .forEach(z=>{
 
-        document.getElementById("bestZone").innerHTML =
-            "🔥 Best Fishing Zone<br>" +
-            best.zone + " → " +
-            best.average_gold.toLocaleString() + " gold / catch";
+        const row=document.createElement("div")
+        row.className="row"
 
-        const container = document.getElementById("zoneContainer");
-        container.innerHTML = "";
+        row.innerHTML=
+            "<span>"+z.zone+"</span>"+
+            "<span>"+z.average_gold.toLocaleString()+"</span>"
 
-        data.zones
-            .sort((a,b)=>b.average_gold-a.average_gold)
-            .forEach(z => {
+        c.appendChild(row)
 
-                const row = document.createElement("div");
-                row.className = "row";
+    })
 
-                row.innerHTML =
-                    "<span>Zone " + z.zone + "</span>" +
-                    "<span>" + z.average_gold.toLocaleString() + "</span>";
+    document.getElementById("updatedTime").innerText=
+        "Fishing updated "+timeAgo(data.updated)
+}
 
-                container.appendChild(row);
 
-            });
+async function loadTS(){
 
-        document.getElementById("updatedTime").innerText =
-            "Last updated: " + timeAgo(data.updated);
+    const r=await fetch("./group_time_space.json?"+Date.now())
+    const data=await r.json()
 
-    }
-    catch(err){
+    const c=document.getElementById("tsContainer")
+    c.innerHTML=""
 
-        console.error(err);
+    data.runs.forEach(run=>{
 
-        document.getElementById("zoneContainer").innerHTML =
-            "<div class='error'>Failed to load fish_prices.json</div>";
+        const row=document.createElement("div")
+        row.className="row"
 
-    }
+        row.innerHTML=
+            "<span>"+run.range+"</span>"+
+            "<span>"+run.net_profit.toLocaleString()+" net</span>"
+
+        c.appendChild(row)
+
+    })
 
 }
 
-loadData();
 
-setInterval(loadData,30000);
+async function loadGrinding(){
+
+    const r=await fetch("./grinding_spots.json?"+Date.now())
+    const data=await r.json()
+
+    const c=document.getElementById("grindContainer")
+    c.innerHTML=""
+
+    data.spots.forEach(s=>{
+
+        const row=document.createElement("div")
+        row.className="row"
+
+        row.innerHTML=
+            "<span>"+s.name+"</span>"+
+            "<span>"+s.profit_per_hour.toLocaleString()+"/h</span>"
+
+        c.appendChild(row)
+
+    })
+
+}
+
+async function loadAll(){
+
+    loadFishing()
+    loadTS()
+    loadGrinding()
+
+}
+
+loadAll()
+
+setInterval(loadAll,30000)
 
 </script>
 
