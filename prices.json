@@ -1,0 +1,22 @@
+{
+  "fish_prices": {
+
+    "giant_catfish": { "name": "Giant Catfish", "npc": 35000, "bazaar": 2799999 },
+    "silver_piranha": { "name": "Silver Piranha", "npc": 750, "bazaar": 21998 },
+    "bespectacled_carp": { "name": "Bespectacled Carp", "npc": 860, "bazaar": 1500 },
+    "chubby_carp": { "name": "Chubby Carp", "npc": 860, "bazaar": 863 },
+    "catfish": { "name": "Catfish", "npc": 2650, "bazaar": 100000 },
+
+    "chocolate_shark": { "name": "Chocolate Shark", "npc": 55000, "bazaar": 299000 },
+    "red_starfish": { "name": "Red Starfish", "npc": 800, "bazaar": 799 },
+    "blowfish": { "name": "Blowfish", "npc": 900, "bazaar": 1300 },
+    "tipsy_pollock": { "name": "Tipsy Pollock", "npc": 900, "bazaar": 915 },
+    "red_pollock": { "name": "Red Pollock", "npc": 3400, "bazaar": 27500 },
+
+    "arowana": { "name": "Arowana", "npc": 60000, "bazaar": 63197 },
+    "green_sunfish": { "name": "Green Sunfish", "npc": 900, "bazaar": 887 },
+    "red_bespectacled_carp": { "name": "Red Bespectacled Carp", "npc": 950, "bazaar": 945 },
+    "salmon": { "name": "Salmon", "npc": 4500, "bazaar": 24999 }
+
+  }
+}
