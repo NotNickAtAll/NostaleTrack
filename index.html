@@ -1,13 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My First Site</title>
+<title>Nostale Tracker</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#121212;
+    color:white;
+    text-align:center;
+    padding-top:80px;
+}
+
+h1{
+    font-size:40px;
+}
+
+.card{
+    background:#1f1f1f;
+    padding:20px;
+    margin:10px auto;
+    width:320px;
+    border-radius:10px;
+}
+
+.price{
+    display:flex;
+    justify-content:space-between;
+    padding:5px 0;
+}
+
+.updated{
+    margin-top:20px;
+    font-size:12px;
+    color:#aaa;
+}
+</style>
+
 </head>
 
 <body>
 
-<h1>Hello internet</h1>
-<p>This site is hosted on GitHub Pages.</p>
+<h1>Nostale Market Tracker</h1>
+
+<div class="card" id="fishContainer">
+Loading prices...
+</div>
+
+<div class="updated" id="updatedTime"></div>
+
+<script>
+
+fetch("fish_prices.json")
+.then(response => response.json())
+.then(data => {
+
+    const container = document.getElementById("fishContainer");
+    container.innerHTML = "";
+
+    data.fish.forEach(f => {
+
+        const row = document.createElement("div");
+        row.className = "price";
+
+        row.innerHTML =
+            "<span>"+f.name+"</span>" +
+            "<span>"+f.price.toLocaleString()+"</span>";
+
+        container.appendChild(row);
+
+    });
+
+    document.getElementById("updatedTime").innerText =
+        "Last updated: " + data.updated;
+
+});
+
+</script>
 
 </body>
 </html>
