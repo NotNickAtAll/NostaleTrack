@@ -1,36 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>The Nostale Helper</title>
+<link rel="icon" href="favicon.png?v=9">
+
+<style>
+
+body{
+font-family:Arial;
+background:#121212;
+color:white;
+text-align:center;
+padding-top:40px;
+}
+
+h1{font-size:42px;}
+
+.container{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+}
+
+.panel{width:380px;}
+
+.card{
+background:#1f1f1f;
+padding:20px;
+border-radius:12px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px 0;
+border-bottom:1px solid #333;
+}
+
+.row:last-child{border-bottom:none;}
+
+.clickable{cursor:pointer;transition:0.15s;}
+
+.clickable:hover{background:#2a2a2a;}
+
+.best{
+font-size:15px;
+color:#ffcc00;
+margin-bottom:15px;
+}
+
+.title{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.details{
+background:#181818;
+padding:10px 0;
+}
+
+.updated{
+margin-top:20px;
+font-size:13px;
+color:#aaa;
+}
+
+.fishName{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.fishIcon{
+width:28px;
+height:28px;
+image-rendering:pixelated;
+}
+
+.fishPrices{
+display:flex;
+gap:10px;
+font-size:14px;
+}
+
+.npc{color:#cfcfcf;}
+.bazaar{color:#7CFF8A;}
+
+</style>
+</head>
+
+<body>
+
+<h1>The Nostale Helper</h1>
+
+<div class="container">
+
+<div class="panel">
+<div class="card">
+<div class="title">🎣 Fishing</div>
+<div id="bestZone" class="best">Loading...</div>
+<div id="zoneContainer"></div>
+</div>
+</div>
+
+<div class="panel">
+<div class="card">
+<div class="title">🌀 Group Time Space</div>
+<div id="tsContainer">Loading...</div>
+</div>
+</div>
+
+<div class="panel">
+<div class="card">
+<div class="title">⚔ Grinding Spots</div>
+<div id="grindContainer">Loading...</div>
+</div>
+</div>
+
+</div>
+
+<div id="updatedTime" class="updated"></div>
+
 <script>
 
-let openedRow = null
+let openedRow=null
 
 function timeAgo(timestamp){
-
 const now=Math.floor(Date.now()/1000)
 const diff=now-timestamp
 
 if(diff<60) return diff+" sec ago"
-
 const min=Math.floor(diff/60)
 
 if(min<60) return min+" min ago"
-
 const h=Math.floor(min/60)
 
 if(h<24) return h+" hr ago"
-
 return Math.floor(h/24)+" days ago"
-
 }
 
 
 
 async function loadFishing(){
 
-const zonesData=await fetch("./zones.json?"+Date.now()).then(r=>r.json())
-const priceData=await fetch("./fish_prices.json?"+Date.now()).then(r=>r.json())
+const zonesData = await fetch("./zones.json?"+Date.now()).then(r=>r.json())
+const pricesData = await fetch("./fish_prices.json?"+Date.now()).then(r=>r.json())
 
-const priceTable = priceData.fish_prices
+const prices = pricesData.fish_prices
 
-// combine data
 zonesData.zones.forEach(zone=>{
 
 let npcTotal=0
@@ -38,38 +159,36 @@ let bazaarTotal=0
 
 zone.fish.forEach(f=>{
 
-const p = priceTable[f.id]
-
+const p=prices[f.id]
 if(!p) return
 
-f.name = p.name
-f.npc_value = p.npc
-f.bazaar_value = p.bazaar
+f.name=p.name
+f.npc_value=p.npc
+f.bazaar_value=p.bazaar
 
-npcTotal += (f.chance/100) * p.npc
-bazaarTotal += (f.chance/100) * p.bazaar
-
-})
-
-zone.npc_average_gold = Math.round(npcTotal)
-zone.bazaar_average_gold = Math.round(bazaarTotal)
+npcTotal += (f.chance/100)*p.npc
+bazaarTotal += (f.chance/100)*p.bazaar
 
 })
 
+zone.npc_average_gold=Math.round(npcTotal)
+zone.bazaar_average_gold=Math.round(bazaarTotal)
+
+})
 
 
-// best zones
-const bestNPC = [...zonesData.zones].sort((a,b)=>b.npc_average_gold-a.npc_average_gold)[0]
-const bestBazaar = [...zonesData.zones].sort((a,b)=>b.bazaar_average_gold-a.bazaar_average_gold)[0]
+const bestNPC=[...zonesData.zones].sort((a,b)=>b.npc_average_gold-a.npc_average_gold)[0]
+const bestBazaar=[...zonesData.zones].sort((a,b)=>b.bazaar_average_gold-a.bazaar_average_gold)[0]
 
-document.getElementById("bestZone").innerHTML =
+
+document.getElementById("bestZone").innerHTML=
 "🪙 NPC best: <b>"+bestNPC.zone+"</b> → "+
 bestNPC.npc_average_gold.toLocaleString()+" gold / catch<br>"+
 "🏪 Bazaar best: <b>"+bestBazaar.zone+"</b> → "+
 bestBazaar.bazaar_average_gold.toLocaleString()+" gold / catch"
 
-const container=document.getElementById("zoneContainer")
 
+const container=document.getElementById("zoneContainer")
 container.innerHTML=""
 
 zonesData.zones
@@ -77,14 +196,13 @@ zonesData.zones
 .forEach(zone=>{
 
 const row=document.createElement("div")
-
 row.className="row clickable"
 
-row.innerHTML =
+row.innerHTML=
 "<span>"+zone.zone+"</span>"+
-"<span class='fishPrices'>" +
-"<span class='npc'>🪙 "+zone.npc_average_gold.toLocaleString()+"</span> / " +
-"<span class='bazaar'>🏪 "+zone.bazaar_average_gold.toLocaleString()+"</span>" +
+"<span class='fishPrices'>"+
+"<span class='npc'>🪙 "+zone.npc_average_gold.toLocaleString()+"</span> / "+
+"<span class='bazaar'>🏪 "+zone.bazaar_average_gold.toLocaleString()+"</span>"+
 "</span>"
 
 row.onclick=()=>toggleFish(row,zone)
@@ -93,8 +211,8 @@ container.appendChild(row)
 
 })
 
-document.getElementById("updatedTime").innerText =
-"Fishing updated "+timeAgo(priceData.updated)
+document.getElementById("updatedTime").innerText=
+"Fishing updated "+timeAgo(pricesData.updated)
 
 }
 
@@ -108,14 +226,11 @@ openedRow=null
 }
 
 const details=document.createElement("div")
-
 details.className="details"
 
 const title=document.createElement("div")
-
 title.style.fontWeight="bold"
 title.style.margin="10px 0"
-
 title.innerText="Fish in zone "+zone.zone
 
 details.appendChild(title)
@@ -123,15 +238,14 @@ details.appendChild(title)
 zone.fish.forEach(f=>{
 
 const r=document.createElement("div")
-
 r.className="row"
 
-r.innerHTML =
-"<span class='fishName'>" +
-"<img src='"+f.icon+"' class='fishIcon'>" +
+r.innerHTML=
+"<span class='fishName'>"+
+"<img src='"+f.icon+"' class='fishIcon'>"+
 f.name+" ("+f.chance+"%)"+
 "</span>"+
-"<span class='fishPrices'>" +
+"<span class='fishPrices'>"+
 "<span class='npc'>🪙 "+f.npc_value.toLocaleString()+"</span> / "+
 "<span class='bazaar'>🏪 "+f.bazaar_value.toLocaleString()+"</span>"+
 "</span>"
@@ -141,7 +255,6 @@ details.appendChild(r)
 })
 
 row.after(details)
-
 openedRow=details
 
 }
@@ -154,13 +267,11 @@ const r=await fetch("./group_time_space.json?"+Date.now())
 const data=await r.json()
 
 const c=document.getElementById("tsContainer")
-
 c.innerHTML=""
 
 data.runs.forEach(run=>{
 
 const row=document.createElement("div")
-
 row.className="row"
 
 row.innerHTML=
@@ -181,13 +292,11 @@ const r=await fetch("./grinding_spots.json?"+Date.now())
 const data=await r.json()
 
 const c=document.getElementById("grindContainer")
-
 c.innerHTML=""
 
 data.spots.forEach(s=>{
 
 const row=document.createElement("div")
-
 row.className="row"
 
 row.innerHTML=
@@ -202,12 +311,10 @@ c.appendChild(row)
 
 
 
-async function loadAll(){
-
+function loadAll(){
 loadFishing()
 loadTS()
 loadGrinding()
-
 }
 
 loadAll()
@@ -215,3 +322,6 @@ loadAll()
 setInterval(loadAll,30000)
 
 </script>
+
+</body>
+</html>
