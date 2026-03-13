@@ -243,12 +243,15 @@ const r=document.createElement("div")
 
 r.className="row"
 
-r.innerHTML=
+r.innerHTML =
 "<span class='fishName'>" +
 "<img src='"+f.icon+"' class='fishIcon'>" +
-f.name+" ("+f.chance+")" +
+f.name + " (" + f.chance + ")" +
 "</span>" +
-"<span>"+f.value.toLocaleString()+"</span>"
+"<span class='fishPrices'>" +
+"<span class='npc'>🪙 " + f.npc_value.toLocaleString() + "</span> / " +
+"<span class='bazaar'>🏪 " + f.bazaar_value.toLocaleString() + "</span>" +
+"</span>";
 
 details.appendChild(r)
 
