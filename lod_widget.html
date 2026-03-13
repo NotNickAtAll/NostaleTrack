@@ -9,31 +9,36 @@
 
 <style>
 
+body{margin:0}
+
 .lodBox{
 background:#1f1f1f;
 padding:12px;
 border-radius:12px;
 width:420px;
 margin:auto;
-margin-bottom:20px;
 font-size:13px;
+color:white;
+font-family:Arial;
 }
 
 .lodTitle{
 font-size:18px;
 font-weight:bold;
 margin-bottom:8px;
+text-align:center;
 }
 
 #nextLod{
 color:#ffcc66;
-margin-bottom:8px;
+margin-bottom:10px;
+text-align:center;
 }
 
 .lodRow{
 display:flex;
 justify-content:space-between;
-padding:4px 0;
+padding:6px 0;
 border-bottom:1px solid #333;
 }
 
@@ -49,7 +54,7 @@ color:#7CFF8A;
 
 <script>
 
-const lodSchedule=[
+const schedule=[
 {start:0,end:2,ch:"7"},
 {start:3,end:5,ch:"1"},
 {start:6,end:8,ch:"1"},
@@ -60,58 +65,51 @@ const lodSchedule=[
 {start:21,end:23,ch:"4,5,6"}
 ]
 
-const container=document.getElementById("lodRows")
+const rowsContainer=document.getElementById("lodRows")
 
-const lodTimes=[]
+const slots=[]
 
-lodSchedule.forEach(slot=>{
-
-const now=new Date()
+schedule.forEach(s=>{
 
 const start=new Date()
-start.setHours(slot.start,0,0,0)
+start.setHours(s.start,0,0,0)
 
 const end=new Date()
-end.setHours(slot.end,0,0,0)
-
-lodTimes.push({start,end,ch:slot.ch})
+end.setHours(s.end,0,0,0)
 
 const row=document.createElement("div")
 row.className="lodRow"
 
 row.innerHTML=`
 <span class="time"></span>
-<span>CH ${slot.ch}</span>
+<span>CH ${s.ch}</span>
 <span class="count"></span>
 `
 
-container.appendChild(row)
+rowsContainer.appendChild(row)
 
-slot.element=row
+slots.push({start,end,ch:s.ch,row})
 
 })
 
-function formatTime(date){
-return date.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})
+function formatTime(d){
+return d.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})
 }
 
-function updateLOD(){
+function update(){
 
 const now=new Date()
 
 let nextDiff=null
-let nextChannels=""
+let nextCh=""
 
-lodTimes.forEach(slot=>{
+slots.forEach(slot=>{
 
-const row=slot.element
+const row=slot.row
 const time=row.querySelector(".time")
 const count=row.querySelector(".count")
 
-time.innerText=
-formatTime(slot.start)+" - "+formatTime(slot.end)
-
-const diff=(slot.start-now)/1000
+time.innerText=formatTime(slot.start)+" - "+formatTime(slot.end)
 
 if(now>=slot.start && now<=slot.end){
 
@@ -122,6 +120,8 @@ row.classList.add("active")
 
 row.classList.remove("active")
 
+const diff=(slot.start-now)/1000
+
 if(diff>0){
 
 const m=Math.floor(diff/60)
@@ -131,7 +131,7 @@ count.innerText=m+"m "+s+"s"
 
 if(nextDiff===null){
 nextDiff=diff
-nextChannels=slot.ch
+nextCh=slot.ch
 }
 
 }else{
@@ -150,7 +150,7 @@ const m=Math.floor(nextDiff/60)
 const s=Math.floor(nextDiff%60)
 
 document.getElementById("nextLod").innerText=
-"🔥 Next LoD in "+m+"m "+s+"s (CH "+nextChannels+")"
+"🔥 Next LoD in "+m+"m "+s+"s (CH "+nextCh+")"
 
 }else{
 
@@ -160,7 +160,7 @@ document.getElementById("nextLod").innerText="🔥 LoD closed"
 
 }
 
-updateLOD()
-setInterval(updateLOD,1000)
+update()
+setInterval(update,1000)
 
 </script>
