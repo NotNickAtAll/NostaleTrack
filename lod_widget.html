@@ -76,6 +76,7 @@
 <span class="count"></span>
 </div>
 
+
 </div>
 
 </div>
@@ -83,67 +84,73 @@
 <script>
 
 function formatTime(unix){
-const d=new Date(unix*1000)
+const d = new Date(unix*1000)
 return d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})
 }
 
 function update(){
 
-const now=Math.floor(Date.now()/1000)
+const now = Math.floor(Date.now()/1000)
 
-let nextStart=null
-let nextChannels=""
+let nextStart = null
+let nextChannels = ""
 
-document.querySelectorAll(".lodRow").forEach(row=>{
+document.querySelectorAll(".lodRow").forEach(row => {
 
-const start=parseInt(row.dataset.start)
-const end=parseInt(row.dataset.end)
-const ch=row.dataset.ch
+const start = parseInt(row.dataset.start)
+const end = parseInt(row.dataset.end)
+const ch = row.dataset.ch
 
-const startEl=row.querySelector(".start")
-const endEl=row.querySelector(".end")
-const cd=row.querySelector(".count")
+const startEl = row.querySelector(".start")
+const endEl = row.querySelector(".end")
+const cd = row.querySelector(".count")
 
-startEl.innerText=formatTime(start)
-endEl.innerText=formatTime(end)
+startEl.innerText = formatTime(start)
+endEl.innerText = formatTime(end)
 
-if(now>=start && now<=end){
-cd.innerText="OPEN"
+if(now >= start && now <= end){
+
+cd.innerText = "OPEN"
 row.classList.add("active")
+
 }else{
 
-const diff=start-now
+const diff = start - now
 
-if(diff>0){
+if(diff > 0){
 
-const m=Math.floor(diff/60)
-const s=diff%60
+const m = Math.floor(diff/60)
+const s = diff % 60
 
-cd.innerText=m+"m "+s+"s"
+cd.innerText = m+"m "+s+"s"
 
-if(nextStart===null){
-nextStart=diff
-nextChannels=ch
+if(nextStart === null){
+nextStart = diff
+nextChannels = ch
 }
 
 }else{
-cd.innerText="-"
+
+cd.innerText = "-"
+
 }
 
 }
 
 })
 
-if(nextStart!==null){
+if(nextStart !== null){
 
-const m=Math.floor(nextStart/60)
-const s=nextStart%60
+const m = Math.floor(nextStart/60)
+const s = nextStart % 60
 
 document.getElementById("nextLod").innerText =
 "🔥 Next LoD in "+m+"m "+s+"s (CH "+nextChannels+")"
 
 }else{
-document.getElementById("nextLod").innerText="🔥 LoD closed"
+
+document.getElementById("nextLod").innerText = "🔥 LoD closed"
+
 }
 
 }
