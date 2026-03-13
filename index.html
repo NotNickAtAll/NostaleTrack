@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Nostale Market Tracker</title>
+
 <link rel="icon" type="image/png" href="favicon.png">
+
 <style>
+
 body{
     font-family: Arial;
     background:#121212;
@@ -49,6 +53,7 @@ h1{
 .error{
     color:red;
 }
+
 </style>
 
 </head>
@@ -73,8 +78,8 @@ async function loadData(){
 
     try{
 
-        // fetch JSON
-        const response = await fetch("./fish_prices.json");
+        // Fetch JSON with cache bypass
+        const response = await fetch("./fish_prices.json?nocache=" + Date.now());
 
         if(!response.ok){
             throw new Error("JSON file not found");
@@ -82,7 +87,7 @@ async function loadData(){
 
         const data = await response.json();
 
-        // BEST ZONE
+        // Best fishing zone
         const best = data.best_zone;
 
         document.getElementById("bestZone").innerHTML =
@@ -90,12 +95,12 @@ async function loadData(){
             best.zone + " → " +
             best.average_gold.toLocaleString() + " gold / catch";
 
-        // ZONES LIST
+        // Zone list
         const container = document.getElementById("zoneContainer");
         container.innerHTML = "";
 
         data.zones
-            .sort((a,b)=>b.average_gold-a.average_gold)
+            .sort((a,b)=>b.average_gold - a.average_gold)
             .forEach(z => {
 
                 const row = document.createElement("div");
@@ -107,7 +112,7 @@ async function loadData(){
 
                 container.appendChild(row);
 
-        });
+            });
 
         document.getElementById("updatedTime").innerText =
             "Last updated: " + data.updated;
@@ -124,11 +129,11 @@ async function loadData(){
 
 }
 
+// Initial load
 loadData();
 
-// refresh every 30 seconds
+// Refresh every 30 seconds
 setInterval(loadData, 30000);
-    
 
 </script>
 
