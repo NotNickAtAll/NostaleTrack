@@ -1,0 +1,30 @@
+{
+  "spots":[
+    {
+      "name":"Cursed Forest",
+      "profit_per_hour":85000,
+      "drops":[
+        {"item":"Dark Bark","value":25000},
+        {"item":"Cursed Resin","value":18000}
+      ]
+    },
+    {
+      "name":"Frozen Peaks",
+      "profit_per_hour":120000,
+      "drops":[
+        {"item":"Ice Crystal","value":45000},
+        {"item":"Frost Fang","value":32000}
+      ]
+    },
+    {
+      "name":"Volcanic Rift",
+      "profit_per_hour":165000,
+      "drops":[
+        {"item":"Lava Core","value":60000},
+        {"item":"Flame Scale","value":52000}
+      ]
+    }
+  ],
+
+  "updated": 1710330000
+}
