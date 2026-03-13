@@ -59,6 +59,43 @@
         {"name":"Coral Fish","chance":"9%","value":1100}
       ]
     }
+
+    {
+  "zone": "1-50",
+  "average_gold": 11300,
+  "fish": [
+    {
+      "name": "Giant Catfish",
+      "chance": "1.2%",
+      "value": 35000,
+      "icon": "FishPng/giant_catfish.png"
+    },
+    {
+      "name": "Silver Piranha",
+      "chance": "48.8%",
+      "value": 20000,
+      "icon": "FishPng/silver_piranha.png"
+    },
+    {
+      "name": "Bespectacled Carp",
+      "chance": "20%",
+      "value": 12000,
+      "icon": "FishPng/bespectacled_carp.png"
+    },
+    {
+      "name": "Chubby Carp",
+      "chance": "20%",
+      "value": 9000,
+      "icon": "FishPng/chubby_carp.png"
+    },
+    {
+      "name": "Catfish",
+      "chance": "10%",
+      "value": 8000,
+      "icon": "FishPng/catfish.png"
+    }
+  ]
+}
   ],
 
   "best_zone":{
