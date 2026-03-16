@@ -386,7 +386,8 @@ font-size:14px;
 
 <script>
 
-let openedRow=null
+let openedFishRow = null
+let openedTSRow = null
 
 function timeAgo(timestamp){
 const now=Math.floor(Date.now()/1000)
@@ -479,9 +480,9 @@ document.getElementById("updatedTime").innerText=
 
 function toggleFish(row,zone){
 
-if(openedRow){
-openedRow.remove()
-openedRow=null
+if(openedFishRow){
+openedFishRow.remove()
+openedFishRow=null
 }
 
 const details=document.createElement("div")
@@ -514,15 +515,15 @@ details.appendChild(r)
 })
 
 row.after(details)
-openedRow=details
+openedFishRow = details
 
 }
 
 function toggleTS(row,run){
 
-if(openedRow){
-openedRow.remove()
-openedRow=null
+if(openedTSRow){
+openedTSRow.remove()
+openedTSRow=null
 }
 
 const recipes = {
@@ -605,7 +606,7 @@ stats.innerHTML =
 details.appendChild(stats)
 
 row.after(details)
-openedRow=details
+openedTSRow = details
 
 }
 
