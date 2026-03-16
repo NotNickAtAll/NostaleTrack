@@ -24,15 +24,16 @@
 .bestGlow{
 position:relative;
 border-radius:6px;
-animation: goldFlow 4s linear infinite;
+z-index:0;
 }
 
 .bestGlow::before{
 content:"";
 position:absolute;
-inset:-2px;
-border-radius:8px;
+inset:0;
+border-radius:6px;
 padding:2px;
+
 background:linear-gradient(
 120deg,
 #ffd700,
@@ -41,13 +42,18 @@ background:linear-gradient(
 #ffcc00,
 #fff3a0
 );
+
 background-size:300% 300%;
 animation: goldFlow 4s linear infinite;
+
 -webkit-mask:
 linear-gradient(#000 0 0) content-box,
 linear-gradient(#000 0 0);
+
 -webkit-mask-composite: xor;
 mask-composite: exclude;
+
+pointer-events:none;
 }
 
 @keyframes goldFlow{
