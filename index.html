@@ -587,8 +587,8 @@ rewardRow.innerHTML =
 "Gillion Stone"+
 "</span>"+
 "<span class='bazaar'>"+
-"Solo: "+run.solo_net_profit.toLocaleString()+
-" | x3: "+run.trio_net_profit.toLocaleString()+
+"Solo: "+run.soloNet.toLocaleString()+
+" | x3: "+run.trioNet.toLocaleString()+
 "</span>"
 
 details.appendChild(rewardRow)
@@ -599,8 +599,8 @@ stats.className="row"
 stats.innerHTML =
 "<span>Gold/hour</span>"+
 "<span>"+
-"👤 "+run.solo_gold_hour.toLocaleString()+
-" | 👥 "+run.trio_gold_hour.toLocaleString()+
+"👤 "+run.soloGoldHour.toLocaleString()+
+" | 👥 "+run.trioGoldHour.toLocaleString()+
 "</span>"
 
 details.appendChild(stats)
