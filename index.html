@@ -556,6 +556,13 @@ details.appendChild(title)
 
 recipes[run.range].forEach(m=>{
 
+let cost = 0
+
+if(m.id==="seed_of_power") cost = run.seedCost
+if(m.id==="new_moon_crystal") cost = run.newmoonCost
+if(m.id==="half_moon_crystal") cost = run.halfmoonCost
+if(m.id==="group_time_space_piece") cost = run.pieceCost
+
 const r = document.createElement("div")
 r.className="row"
 
@@ -564,7 +571,7 @@ r.innerHTML =
 "<img src='ItemPng/"+m.id+".png' class='itemIcon'>"+
 m.name+" x"+m.amount+
 "</span>"+
-"<span class='npc'>Material</span>"
+"<span style='color:#ff6b6b'>-"+cost.toLocaleString()+"</span>"
 
 details.appendChild(r)
 
@@ -604,24 +611,58 @@ openedRow=details
 
 async function loadTS(){
 
-const r = await fetch("./group_time_space.json?"+Date.now())
-const data = await r.json()
+const tsData = await fetch("./ts_config.json?"+Date.now()).then(r=>r.json())
+const pricesData = await fetch("./prices.json?"+Date.now()).then(r=>r.json())
 
-const c = document.getElementById("tsContainer")
-c.innerHTML=""
+const prices = pricesData.fish_prices
 
-data.runs.forEach(run=>{
+const container = document.getElementById("tsContainer")
+container.innerHTML=""
+
+tsData.runs.forEach(run=>{
+
+const seed = run.seed_of_power * (prices.seed_of_power?.bazaar || 0)
+const newmoon = run.new_moon_crystal * (prices.new_moon_crystal?.bazaar || 0)
+const halfmoon = run.half_moon_crystal * (prices.half_moon_crystal?.bazaar || 0)
+const piece = run.group_ts_piece * (prices.group_time_space_piece?.bazaar || 0)
+
+const cost = seed + newmoon + halfmoon + piece
+
+const rewardPrice = prices.gillion_stone?.bazaar || 0
+const soloProfit = run.reward * rewardPrice
+const trioProfit = soloProfit * 3
+
+const soloNet = soloProfit - cost
+const trioNet = trioProfit - cost
+
+const runsPerHour = 60 / run.time_minutes
+
+const soloGoldHour = Math.round(soloNet * runsPerHour)
+const trioGoldHour = Math.round(trioNet * runsPerHour)
 
 const row = document.createElement("div")
 row.className="row clickable"
 
 row.innerHTML =
 "<span>"+run.range+"</span>"+
-"<span>"+run.trio_gold_hour.toLocaleString()+"/h</span>"
+"<span>"+trioGoldHour.toLocaleString()+"/h</span>"
 
-row.onclick = ()=>toggleTS(row,run)
+row.onclick = ()=>toggleTS(row,{
+...run,
+seedCost:seed,
+newmoonCost:newmoon,
+halfmoonCost:halfmoon,
+pieceCost:piece,
+cost,
+soloProfit,
+trioProfit,
+soloNet,
+trioNet,
+soloGoldHour,
+trioGoldHour
+})
 
-c.appendChild(row)
+container.appendChild(row)
 
 })
 
@@ -656,7 +697,7 @@ c.appendChild(row)
 
 function loadAll(){
 loadFishing()
-loadTS()
+
 loadGrinding()
 }
 
