@@ -21,6 +21,41 @@
 
 <style>
 
+.bestGlow{
+position:relative;
+border-radius:6px;
+animation: goldFlow 4s linear infinite;
+}
+
+.bestGlow::before{
+content:"";
+position:absolute;
+inset:-2px;
+border-radius:8px;
+padding:2px;
+background:linear-gradient(
+120deg,
+#ffd700,
+#fff3a0,
+#ffd700,
+#ffcc00,
+#fff3a0
+);
+background-size:300% 300%;
+animation: goldFlow 4s linear infinite;
+-webkit-mask:
+linear-gradient(#000 0 0) content-box,
+linear-gradient(#000 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+}
+
+@keyframes goldFlow{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
 .eventsContainer{
 display:flex;
 justify-content:center;
@@ -436,7 +471,7 @@ zone.bazaar_average_gold=Math.round(bazaarTotal)
 
 })
 
-
+const bestBazaarValue = Math.max(...zonesData.zones.map(z=>z.bazaar_average_gold))
 const bestNPC=[...zonesData.zones].sort((a,b)=>b.npc_average_gold-a.npc_average_gold)[0]
 const bestBazaar=[...zonesData.zones].sort((a,b)=>b.bazaar_average_gold-a.bazaar_average_gold)[0]
 
@@ -457,6 +492,10 @@ zonesData.zones
 
 const row=document.createElement("div")
 row.className="row clickable"
+
+if(zone.bazaar_average_gold === bestBazaarValue){
+row.classList.add("bestGlow")
+}
 
 row.innerHTML=
 "<span>"+zone.zone+"</span>"+
@@ -620,6 +659,8 @@ const prices = pricesData.fish_prices
 const container = document.getElementById("tsContainer")
 container.innerHTML=""
 
+let results = []
+
 tsData.runs.forEach(run=>{
 
 const seed = run.seed_of_power * (prices.seed_of_power?.bazaar || 0)
@@ -641,14 +682,7 @@ const runsPerHour = 60 / run.time_minutes
 const soloGoldHour = Math.round(soloNet * runsPerHour)
 const trioGoldHour = Math.round(trioNet * runsPerHour)
 
-const row = document.createElement("div")
-row.className="row clickable"
-
-row.innerHTML =
-"<span>"+run.range+"</span>"+
-"<span>"+trioGoldHour.toLocaleString()+"/h</span>"
-
-row.onclick = ()=>toggleTS(row,{
+results.push({
 ...run,
 seedCost:seed,
 newmoonCost:newmoon,
@@ -662,6 +696,25 @@ trioNet,
 soloGoldHour,
 trioGoldHour
 })
+
+})
+
+const bestTS = Math.max(...results.map(r=>r.trioGoldHour))
+
+results.forEach(run=>{
+
+const row=document.createElement("div")
+row.className="row clickable"
+
+if(run.trioGoldHour === bestTS){
+row.classList.add("bestGlow")
+}
+
+row.innerHTML=
+"<span>"+run.range+"</span>"+
+"<span>"+run.trioGoldHour.toLocaleString()+"/h</span>"
+
+row.onclick = ()=>toggleTS(row,run)
 
 container.appendChild(row)
 
